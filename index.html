@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALIRY. Flower Studio | Product Catalog</title>
+  <title>ALIRY. Flower Studio | Luxury Flowers & Floral Gifts</title>
 
   <!-- Google Fonts Integration -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,11 +68,10 @@
     }
 
     .nav-main {
-      padding: 12px 6%;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      padding: 8px 8%;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 15px;
     }
 
     .logo-container {
@@ -84,14 +83,106 @@
       position: relative;
       padding: 2px 5px;
       border-radius: 8px;
-      justify-self: start;
+    }
+
+    .logo-bloom-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
     }
 
     .logo-img {
-      height: clamp(35px, 4vw, 45px);
+      height: clamp(45px, 5vw, 60px);
       width: auto;
+      max-width: 100%;
       object-fit: contain;
       mix-blend-mode: multiply;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .logo-container:hover .logo-img {
+      transform: scale(1.04) rotate(-1deg);
+    }
+
+    /* MAGICAL BLOOM OVERLAY ANIMATION */
+    .bloom-svg-overlay {
+      position: absolute;
+      top: -45px;
+      left: -50px;
+      width: 160px;
+      height: 160px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      transform: scale(0.6) rotate(-15deg);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .logo-container:hover .bloom-svg-overlay {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+
+    .magical-stem {
+      stroke: #914f61;
+      stroke-width: 2;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    }
+
+    .logo-container:hover .magical-stem {
+      stroke-dashoffset: 0;
+    }
+
+    .magical-branch {
+      stroke: #d8a0a6;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    }
+
+    .logo-container:hover .magical-branch {
+      stroke-dashoffset: 0;
+    }
+
+    .magical-petal {
+      fill: #f5cfd5;
+      stroke: #914f61;
+      stroke-width: 0.8;
+      transform: scale(0);
+      transform-origin: center;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
+    }
+
+    .logo-container:hover .magical-petal {
+      transform: scale(1);
+    }
+
+    .magical-sparkle {
+      fill: #e6b800;
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center;
+      transition: all 0.5s ease 0.7s;
+    }
+
+    .logo-container:hover .magical-sparkle {
+      opacity: 1;
+      transform: scale(1.2);
+      animation: sparkleFloat 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes sparkleFloat {
+      0% { transform: scale(1.1) translateY(0); }
+      100% { transform: scale(1.3) translateY(-3px); }
     }
 
     .logo-text {
@@ -101,43 +192,71 @@
 
     .logo {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(18px, 1.8vw, 22px);
+      font-size: clamp(22px, 2vw, 28px);
       font-weight: 700;
       color: var(--primary);
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       line-height: 1;
     }
 
     .logo-text span:last-child {
-      font-size: 8px;
+      font-size: 10px;
       display: block;
       font-weight: 500;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       color: var(--text-muted);
       margin-top: 2px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
-    .catalog-title-badge {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: var(--text-muted);
-      font-size: clamp(12px, 1.3vw, 15px);
-      letter-spacing: 1px;
-      white-space: nowrap;
-      justify-self: center;
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 13px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: var(--transition-smooth);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1.5px;
+      background: var(--primary);
+      transition: var(--transition-smooth);
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 15px;
-      justify-self: end;
     }
 
     .cart-btn {
       background: none;
       border: none;
-      font-size: 22px;
+      font-size: 20px;
       cursor: pointer;
       position: relative;
       color: var(--text-dark);
@@ -160,12 +279,21 @@
       padding: 2px 6px;
     }
 
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-dark);
+    }
+
     .categories-bar {
       background: #f7eee9;
       display: flex;
       justify-content: center;
       gap: 15px;
-      padding: 10px 20px;
+      padding: 8px 20px;
       border-top: 1px solid var(--border-light);
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -183,7 +311,7 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       cursor: pointer;
-      padding: 6px 16px;
+      padding: 6px 14px;
       border-radius: 20px;
     }
 
@@ -194,20 +322,188 @@
       box-shadow: 0 4px 12px rgba(145, 79, 97, 0.25);
     }
 
-    /* CATALOG CONTAINER */
-    .catalog-container {
-      padding: 40px 8% 80px;
-      min-height: 75vh;
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 30px 8%;
+      background: white;
+      border-bottom: 1px solid var(--border-light);
+      text-align: center;
+    }
+
+    .trust-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 1.2vw, 18px);
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .trust-item p {
+      font-size: clamp(11px, 0.85vw, 13px);
+      color: var(--text-muted);
+    }
+
+    .story-section {
+      padding: 80px 8%;
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      border-bottom: 1px solid var(--border-light);
+      scroll-margin-top: 110px;
+    }
+
+    .story-img-container {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .story-img-container img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .story-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 2.5vw, 40px);
+      color: var(--primary);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .story-content p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .story-full-content {
+      max-height: 140px;
+      overflow: hidden;
+      transition: max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .story-full-content.expanded {
+      max-height: 1000px;
+    }
+
+    .story-fade-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(transparent, #ffffff);
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .story-full-content.expanded .story-fade-overlay {
+      opacity: 0;
+    }
+
+    /* BUILDER SECTION */
+    .builder-section {
+      padding: 60px 8%;
+      background: #f7eee9;
+      scroll-margin-top: 110px;
+    }
+
+    .builder-coming-soon-card {
+      background: white;
+      border-radius: 10px;
+      padding: 40px 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+      border: 1px solid var(--border-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      background: #f5cfd5;
+      color: var(--primary);
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+
+    .builder-coming-soon-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 2.2vw, 32px);
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .builder-coming-soon-card p {
+      font-size: clamp(14px, 1vw, 16px);
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .builder-coming-soon-card .desc-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .notify-form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .notify-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    .notify-input:focus {
+      border-color: var(--primary);
+      background: white;
+    }
+
+    .section-padding {
+      padding: 60px 8%;
+      scroll-margin-top: 110px;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
-    .section-header h1 {
+    .section-header h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 3vw, 44px);
+      font-size: clamp(26px, 2.4vw, 38px);
       color: var(--primary);
       margin-bottom: 8px;
       font-weight: 400;
@@ -215,13 +511,13 @@
 
     .section-header p {
       color: var(--text-muted);
-      font-size: clamp(13px, 0.95vw, 15px);
+      font-size: clamp(12px, 0.9vw, 14px);
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .product-card {
@@ -233,6 +529,7 @@
       border: 1px solid var(--border-light);
       display: flex;
       flex-direction: column;
+      cursor: pointer;
     }
 
     .product-card.hidden {
@@ -240,14 +537,15 @@
     }
 
     .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
       border-color: rgba(145, 79, 97, 0.3);
     }
 
     .img-container {
       width: 100%;
-      height: 340px;
+      aspect-ratio: 1 / 1;
+      max-height: 200px;
       position: relative;
       overflow: hidden;
       background-color: #fafaf9;
@@ -256,8 +554,10 @@
     .img-container img {
       width: 100%;
       height: 100%;
+      max-width: 100%;
       object-fit: cover;
       object-position: center;
+      display: block;
       transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -265,23 +565,56 @@
       transform: scale(1.08);
     }
 
+    .thumbnail-selector {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      margin-top: 8px;
+      padding: 0 10px;
+    }
+
+    .thumb-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 2px solid var(--border-light);
+      background: none;
+      padding: 0;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .thumb-btn img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumb-btn.active, .thumb-btn:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
     .badge {
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: 8px;
+      left: 8px;
       background: var(--primary);
       color: white;
-      font-size: 9px;
+      font-size: 8px;
       text-transform: uppercase;
-      padding: 5px 10px;
-      letter-spacing: 1.5px;
+      padding: 4px 8px;
+      letter-spacing: 1px;
       font-weight: 600;
       border-radius: 2px;
       z-index: 2;
     }
 
     .product-details {
-      padding: 22px;
+      padding: 15px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -290,65 +623,387 @@
 
     .product-details h3 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(18px, 1.4vw, 22px);
+      font-size: clamp(15px, 1.1vw, 18px);
       color: var(--text-dark);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       font-weight: 600;
     }
 
     .product-details p {
-      font-size: clamp(12px, 0.9vw, 14px);
+      font-size: clamp(11px, 0.8vw, 13px);
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .product-price {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(16px, 1.3vw, 20px);
+      font-size: clamp(14px, 1.1vw, 18px);
       color: var(--primary);
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       margin-top: auto;
     }
 
     .btn-primary {
       display: inline-block;
-      padding: 12px 24px;
+      padding: 10px 20px;
       background: var(--primary);
       color: white;
       text-decoration: none;
       border-radius: 4px;
       text-transform: uppercase;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
-      letter-spacing: 2.5px;
+      letter-spacing: 2px;
       transition: var(--transition-smooth);
       border: none;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(145, 79, 97, 0.3);
+      box-shadow: 0 4px 15px rgba(145, 79, 97, 0.25);
     }
 
     .btn-primary:hover {
       background: var(--primary-hover);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
-    /* FOOTER / CATALOG INFO */
-    footer {
-      background: var(--text-dark);
-      color: white;
-      padding: 40px 8% 20px;
+    .reviews-section {
+      background: #f7eee9;
+      text-align: center;
+      scroll-margin-top: 110px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 550px;
+      margin: 20px auto 0;
+    }
+
+    .review-card {
+      background: white;
+      padding: 40px 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
       text-align: center;
     }
 
+    .stars {
+      color: #e6b800;
+      margin-bottom: 10px;
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      width: 100%;
+      max-width: 550px;
+      max-height: 80vh;
+      border-radius: 10px;
+      padding: 35px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      z-index: 10;
+    }
+
+    .modal-close:hover {
+      color: var(--primary);
+    }
+
+    /* QUICK VIEW PRODUCT MODAL & SWIPE CAROUSEL STYLING */
+    .product-quick-view-content {
+      max-width: 750px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .quick-view-img-container {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fafaf9;
+      border: 1px solid var(--border-light);
+      position: relative;
+    }
+
+    .carousel-track-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--primary);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: var(--transition-smooth);
+    }
+
+    .carousel-btn:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .carousel-dot.active {
+      background: var(--primary);
+      width: 20px;
+      border-radius: 4px;
+    }
+
+    .quick-view-details h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .quick-view-details p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    .quick-view-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .modal-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .modal-content p, .modal-content li {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .modal-content ul {
+      padding-left: 18px;
+      margin-bottom: 12px;
+    }
+
+    .social-icons-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      border-radius: 30px;
+      padding: 4px;
+    }
+
+    .social-icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+    }
+
+    .social-icon-link svg {
+      width: 18px;
+      height: 18px;
+      transition: var(--transition-smooth);
+    }
+
+    .social-icon-link.facebook svg { fill: #1877F2; }
+    .social-icon-link.facebook:hover {
+      background: #1877F2;
+      border-color: #1877F2;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(24, 119, 242, 0.4);
+    }
+    .social-icon-link.facebook:hover svg { fill: #ffffff; }
+
+    .social-icon-link.tiktok svg { fill: #25F4EE; }
+    .social-icon-link.tiktok:hover {
+      background: #000000;
+      border-color: #25F4EE;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(37, 244, 238, 0.3);
+    }
+    .social-icon-link.tiktok:hover svg { fill: #ffffff; }
+
+    .social-icon-link.instagram svg { fill: #E4405F; }
+    .social-icon-link.instagram:hover {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      border-color: #d6249f;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(214, 36, 159, 0.4);
+    }
+    .social-icon-link.instagram:hover svg { fill: #ffffff; }
+
+    footer {
+      background: var(--text-dark);
+      color: white;
+      padding: 60px 8% 25px;
+      scroll-margin-top: 110px;
+    }
+
+    .footer-col.highlight-contact {
+      animation: contactPulse 1.5s ease;
+      background: rgba(216, 160, 166, 0.15);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--accent);
+    }
+
+    .social-icons-container.highlight-socials {
+      animation: socialGlowPulse 1.5s ease;
+      background: rgba(216, 160, 166, 0.25);
+      box-shadow: 0 0 25px 8px rgba(216, 160, 166, 0.5);
+    }
+
+    @keyframes contactPulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 160, 166, 0.7); }
+      50% { transform: scale(1.03); box-shadow: 0 0 25px 8px rgba(216, 160, 166, 0.4); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 160, 166, 0); }
+    }
+
+    @keyframes socialGlowPulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 160, 166, 0.8); }
+      50% { transform: scale(1.05); box-shadow: 0 0 30px 12px rgba(216, 160, 166, 0.6); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(216, 160, 166, 0); }
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 1.1vw, 18px);
+      margin-bottom: 16px;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 12px;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-col a:hover { color: white; padding-left: 4px; }
+
     .footer-bottom {
       border-top: 1px solid #554444;
-      padding-top: 20px;
+      padding-top: 24px;
+      text-align: center;
       font-size: 11px;
       color: #aaa;
     }
 
-    /* CART DRAWER & OVERLAY */
     .overlay {
       position: fixed;
       top: 0;
@@ -361,20 +1016,23 @@
       z-index: 1001;
     }
 
-    .cart-drawer {
+    .cart-drawer, .mobile-nav {
       position: fixed;
       top: 0;
-      right: -400px;
-      width: 380px;
-      height: 100%;
       background: white;
       z-index: 1002;
       transition: var(--transition-smooth);
       display: flex;
       flex-direction: column;
       box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-      padding: 25px;
       overflow-y: auto;
+    }
+
+    .cart-drawer {
+      right: -400px;
+      width: 380px;
+      height: 100%;
+      padding: 25px;
     }
 
     .cart-drawer.active { right: 0; }
@@ -390,7 +1048,6 @@
     .cart-header h3 {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
-      color: var(--primary);
     }
 
     .close-btn {
@@ -420,6 +1077,7 @@
     .cart-item-img {
       width: 45px;
       height: 45px;
+      max-width: 100%;
       object-fit: cover;
       border-radius: 4px;
       background: #f7eee9;
@@ -436,20 +1094,62 @@
       font-family: 'Playfair Display', serif;
     }
 
-    @media (max-width: 992px) {
+    .mobile-nav {
+      left: -100%;
+      width: 75%;
+      max-width: 280px;
+      height: 100%;
+      padding: 25px;
+      z-index: 1003;
+    }
+
+    .mobile-nav.active { left: 0; }
+
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 1200px) {
       .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
+    @media (max-width: 992px) {
+      .trust-bar, .footer-grid, .story-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .story-section { grid-template-columns: 1fr; }
+      .product-quick-view-content { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 768px) {
-      .products-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .menu-toggle { display: block; }
+      .story-section { padding: 50px 5%; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .trust-bar, .footer-grid { grid-template-columns: 1fr; }
       .cart-drawer { width: 100%; right: -100%; }
-      .img-container { height: 300px; }
-      .logo-img { height: 32px; }
-      .logo { font-size: 16px; letter-spacing: 2px; }
-      .catalog-title-badge { font-size: 11px; }
+      .logo-img { height: 40px; }
+      .notify-form { flex-direction: column; }
     }
   </style>
 </head>
@@ -457,122 +1157,473 @@
 <body>
 
   <div class="announcement-bar">
-    🌸 <i>Exclusive Floral Product Catalog</i>
+    🌸 <i>Flower that stays</i>
   </div>
 
   <header>
     <div class="nav-main">
-      <a href="#" class="logo-container">
-        <img src="logo2.jpg" alt="ALIRY. Flower Studio" class="logo-img" onerror="this.style.display='none';">
+      <button class="menu-toggle" id="menuToggleBtn" aria-label="Open Mobile Menu">&#9776;</button>
+
+      <a href="#flowers" class="logo-container">
+        <div class="logo-bloom-wrapper">
+          <svg class="bloom-svg-overlay" viewBox="0 0 120 120">
+            <path class="magical-stem" d="M30 90 Q 40 70, 50 50 T 60 25" />
+            <path class="magical-branch" d="M50 50 Q 35 45, 25 35" />
+            <path class="magical-branch" d="M45 62 Q 60 55, 72 45" />
+            <ellipse class="magical-petal" cx="25" cy="35" rx="5" ry="3" transform="rotate(-30 25 35)" />
+            <ellipse class="magical-petal" cx="72" cy="45" rx="5" ry="3" transform="rotate(30 72 45)" />
+            <g transform="translate(60, 22)">
+              <ellipse class="magical-petal" cx="0" cy="-12" rx="5" ry="9" />
+              <ellipse class="magical-petal" cx="10" cy="-6" rx="5" ry="9" transform="rotate(60 10 -6)" />
+              <ellipse class="magical-petal" cx="10" cy="6" rx="5" ry="9" transform="rotate(120 10 6)" />
+              <ellipse class="magical-petal" cx="0" cy="12" rx="5" ry="9" transform="rotate(180 0 12)" />
+              <ellipse class="magical-petal" cx="-10" cy="6" rx="5" ry="9" transform="rotate(240 -10 6)" />
+              <ellipse class="magical-petal" cx="-10" cy="-6" rx="5" ry="9" transform="rotate(300 -10 -6)" />
+              <circle cx="0" cy="0" r="4" fill="#914f61" />
+            </g>
+            <circle class="magical-sparkle" cx="50" cy="15" r="2" />
+            <circle class="magical-sparkle" cx="78" cy="30" r="1.5" />
+            <circle class="magical-sparkle" cx="20" cy="20" r="1.5" />
+          </svg>
+
+          <img src="logo2.jpg" alt="ALIRY. Flower Studio" class="logo-img" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
         <div class="logo-text">
           <span class="logo">ALIRY.</span>
           <span>FLOWER STUDIO</span>
         </div>
       </a>
 
-      <!-- Perfectly centered using CSS Grid -->
-      <div class="catalog-title-badge">Flowers That Stay</div>
+      <nav>
+        <ul>
+          <li><a href="#flowers">Occasions</a></li>
+          <li><a href="#about" onclick="expandStory(event)">Our Story</a></li>
+          <li><a href="#builder">Custom Builder</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact" onclick="highlightContact()">Contact</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions">
-        <button class="cart-btn" id="cartToggleBtn" aria-label="Open Basket">
+        <button class="cart-btn" id="cartToggleBtn" aria-label="Open Cart">
           🛒 <span class="cart-badge" id="cartBadge">0</span>
         </button>
       </div>
     </div>
 
     <div class="categories-bar">
-      <button class="category-tab active" onclick="filterCategory('all', this)">All Products</button>
+      <button class="category-tab active" onclick="filterCategory('all', this)">All</button>
       <button class="category-tab" onclick="filterCategory('preserved', this)">Preserve Bouquet</button>
       <button class="category-tab" onclick="filterCategory('customized', this)">Customized</button>
       <button class="category-tab" onclick="filterCategory('bestseller', this)">Best Seller</button>
     </div>
   </header>
 
-  <main class="catalog-container" id="catalog">
+  <div class="mobile-nav" id="mobileNav">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h3 style="font-family:'Playfair Display',serif; color:var(--primary);">ALIRY.</h3>
+      <button class="close-btn" id="closeMobileNav">&times;</button>
+    </div>
+    <ul>
+      <li><a href="#flowers" onclick="toggleMobileNav()">Occasions</a></li>
+      <li><a href="#about" onclick="toggleMobileNav(); expandStory();">Our Story</a></li>
+      <li><a href="#builder" onclick="toggleMobileNav()">Custom Builder</a></li>
+      <li><a href="#reviews" onclick="toggleMobileNav()">Reviews</a></li>
+      <li><a href="#contact" onclick="toggleMobileNav(); highlightContact();">Contact</a></li>
+    </ul>
+  </div>
+
+  <section class="section-padding" id="flowers" style="padding-top: 30px;">
     <div class="section-header">
-      <h1>Our Arrangement Collection</h1>
-      <p>Browse our complete catalog of handcrafted dried, preserved, and bespoke floral gifts.</p>
+      <h2>Bestselling Arrangements</h2>
+      <p>Thoughtfully curated blooms for life’s most meaningful moments.</p>
     </div>
 
     <div class="products-grid">
-      <div class="product-card" data-category="bestseller customized">
+
+      <!-- Wrist Corsage & Boutonniere Set -->
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Wrist Corsage & Boutonniere Set', '₱699', 'An elegant matching wrist corsage and boutonniere set crafted for weddings, proms, and special occasions.', ['images/CORSAGEa.jpg', 'images/CORSAGEb.jpg', 'images/CORSAGEc.jpg', 'images/CORSAGEd.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/CORSAGEa.jpg" alt="Wrist Corsage & Boutonniere Set" id="img-corsageset" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-corsageset', 'images/CORSAGEa.jpg', this)"><img src="images/CORSAGEa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEb.jpg', this)"><img src="images/CORSAGEb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEc.jpg', this)"><img src="images/CORSAGEc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEd.jpg', this)"><img src="images/CORSAGEd.jpg" alt="Angle 4" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Wrist Corsage & Boutonniere Set</h3>
+          <p>An elegant matching wrist corsage and boutonniere set crafted for weddings, proms, and special occasions.</p>
+          <div class="product-price">₱699</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Wrist Corsage & Boutonniere Set', 699, document.getElementById('img-corsageset').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Preserved Hydra -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Hydra', '₱999', 'A beautifully preserved floral arrangement crafted to bring lasting elegance and natural beauty to any occasion.', ['images/HYDRAa.jpg', 'images/HYDRAb.jpg', 'images/HYDRAc.jpg'])">
+        <div class="img-container">
+          <span class="badge">Preserved</span>
+          <img src="images/HYDRAa.jpg" alt="Preserved Hydra" id="img-hydra" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-hydra', 'images/HYDRAa.jpg', this)"><img src="images/HYDRAa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-hydra', 'images/HYDRAb.jpg', this)"><img src="images/HYDRAb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-hydra', 'images/HYDRAc.jpg', this)"><img src="images/HYDRAc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Preserved Hydra</h3>
+          <p>A beautifully preserved floral arrangement crafted to bring lasting elegance and natural beauty to any occasion.</p>
+          <div class="product-price">₱999</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Hydra', 999, document.getElementById('img-hydra').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Wooden Daisy -->
+      <div class="product-card" data-category="customized" onclick="openProductModal('Wooden Daisy', '₱999', 'A charming preserved floral arrangement featuring delicate wooden daisies, crafted to bring lasting beauty and warmth to any space.', ['images/DAISYa.jpg', 'images/DAISYb.jpg', 'images/DAISYc.jpg'])">
+        <div class="img-container">
+          <span class="badge">Preserved</span>
+          <img src="images/DAISYa.jpg" alt="Wooden Daisy" id="img-woodendaisy" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-woodendaisy', 'images/DAISYa.jpg', this)"><img src="images/DAISYa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-woodendaisy', 'images/DAISYb.jpg', this)"><img src="images/DAISYb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-woodendaisy', 'images/DAISYc.jpg', this)"><img src="images/DAISYc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Wooden Daisy</h3>
+          <p>A charming preserved floral arrangement featuring delicate wooden daisies, crafted to bring lasting beauty and warmth to any space.</p>
+          <div class="product-price">₱999</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Wooden Daisy', 999, document.getElementById('img-woodendaisy').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Whisper of Pink -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Whisper of Pink', '₱999', 'A soft, romantic arrangement featuring delicate pink blooms and exquisite styling.', ['images/PINKa.jpg', 'images/PINKb.jpg', 'images/PINKc.jpg', 'images/PINKd.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/PINKa.jpg" alt="Whisper of Pink" id="img-whisperpink" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-whisperpink', 'images/PINKa.jpg', this)"><img src="images/PINKa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-whisperpink', 'images/PINKb.jpg', this)"><img src="images/PINKb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-whisperpink', 'images/PINKc.jpg', this)"><img src="images/PINKc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-whisperpink', 'images/PINKd.jpg', this)"><img src="images/PINKd.jpg" alt="Angle 4" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Whisper of Pink</h3>
+          <p>A soft, romantic arrangement featuring delicate pink blooms and exquisite styling.</p>
+          <div class="product-price">₱999</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Whisper of Pink', 999, document.getElementById('img-whisperpink').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Mini Frost Celestial Bouquet -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Frost Celestial Bouquet', '₱899', 'An enchanting, compact celestial arrangement designed with delicate frosted details.', ['images/MCFBa.jpg', 'images/MCFBb.jpg', 'images/MCFBc.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/MCFBa.jpg" alt="Mini Frost Celestial Bouquet" id="img-minifrost" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-minifrost', 'images/MCFBa.jpg', this)"><img src="images/MCFBa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-minifrost', 'images/MCFBb.jpg', this)"><img src="images/MCFBb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-minifrost', 'images/MCFBc.jpg', this)"><img src="images/MCFBc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Mini Frost Celestial Bouquet</h3>
+          <p>An enchanting, compact celestial arrangement designed with delicate frosted details.</p>
+          <div class="product-price">₱899</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Frost Celestial Bouquet', 899, document.getElementById('img-minifrost').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Velvet Roses Elegance', '₱599', 'Premium long-stemmed red roses styled in our signature wrapping.', ['images/sbuldak.jpg'])">
         <div class="img-container">
           <span class="badge">🔥 HOT! Bestseller</span>
-          <img src="images/sbuldak.jpg" alt="Velvet Roses Elegance" id="img-velvet">
+          <img src="images/sbuldak.jpg" alt="Velvet Roses Elegance" id="img-velvet" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="product-details">
           <h3>Velvet Roses Elegance</h3>
           <p>Premium long-stemmed red roses styled in our signature wrapping.</p>
           <div class="product-price">₱599</div>
-          <button class="btn-primary" onclick="addToCart('Velvet Roses Elegance', 599, document.getElementById('img-velvet').src)">Add to Basket</button>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Velvet Roses Elegance', 599, document.getElementById('img-velvet').src)">Add to Basket</button>
         </div>
       </div>
 
-      <div class="product-card" data-category="bestseller customized preserved">
-        <div class="img-container">
-          <span class="badge">🔥 HOT! Luxury</span>
-          <img src="images/signature.jpg" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'" alt="Aliry Signature Hatbox" id="img-hatbox">
-        </div>
-        <div class="product-details">
-          <h3>Aliry Signature Hatbox</h3>
-          <p>Our bespoke luxury floral layout arranged in a velvet gift box.</p>
-          <div class="product-price">₱2,299</div>
-          <button class="btn-primary" onclick="addToCart('Aliry Signature Hatbox', 2299, document.getElementById('img-hatbox').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="preserved">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Eternal Bouquet', '₱1,199', 'Handcrafted real preserved floral arrangement designed to last indefinitely.', ['images/preserve1.jpg'])">
         <div class="img-container">
           <span class="badge">Preserved</span>
-          <img src="images/preserve1.jpg" alt="Preserved Eternal Bouquet" id="img-preserve">
+          <img src="images/preserve1.jpg" alt="Preserved Eternal Bouquet" id="img-preserve" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="product-details">
           <h3>Preserved Eternal Bouquet</h3>
           <p>Handcrafted real preserved floral arrangement designed to last indefinitely.</p>
           <div class="product-price">₱1,199</div>
-          <button class="btn-primary" onclick="addToCart('Preserved Eternal Bouquet', 1199, document.getElementById('img-preserve').src)">Add to Basket</button>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Eternal Bouquet', 1199, document.getElementById('img-preserve').src)">Add to Basket</button>
         </div>
       </div>
 
-      <div class="product-card" data-category="customized">
+      <div class="product-card" data-category="customized" onclick="openProductModal('Golden Sunshine Delight', '₱999', 'Bright sunflowers, white lilies, and lush greenery bouquet.', ['images/BULDAKa.jpg', 'images/BULDAKb.jpg', 'images/BULDAKc.jpg'])">
         <div class="img-container">
           <span class="badge">Seasonal</span>
-          <img src="images/bbuldak.jpg" alt="Golden Sunshine Delight" id="img-sunshine">
+          <img src="images/BULDAKa.jpg" alt="Golden Sunshine Delight" id="img-sunshine" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-sunshine', 'images/BULDAKa.jpg', this)"><img src="images/BULDAKa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-sunshine', 'images/BULDAKb.jpg', this)"><img src="images/BULDAKb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-sunshine', 'images/BULDAKc.jpg', this)"><img src="images/BULDAKc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
           <h3>Golden Sunshine Delight</h3>
           <p>Bright sunflowers, white lilies, and lush greenery bouquet.</p>
           <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="addToCart('Golden Sunshine Delight', 999, document.getElementById('img-sunshine').src)">Add to Basket</button>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Golden Sunshine Delight', 999, document.getElementById('img-sunshine').src)">Add to Basket</button>
         </div>
       </div>
 
-      <div class="product-card" data-category="customized">
+      <div class="product-card" data-category="customized bestseller" onclick="openProductModal('The Prosperity Bouquet', '₱1,299', 'A vibrant arrangement designed to bring abundance, luck, and joy.', ['images/PROSPERITYa.jpg', 'images/PROSPERITYb.jpg', 'images/PROSPERITYc.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ Featured Bloom</span>
+          <img src="images/PROSPERITYa.jpg" alt="The Prosperity Bouquet" id="img-prosperity" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYa.jpg', this)"><img src="images/PROSPERITYa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYb.jpg', this)"><img src="images/PROSPERITYb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYc.jpg', this)"><img src="images/PROSPERITYc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>The Prosperity Bouquet</h3>
+          <p>A vibrant arrangement designed to bring abundance, luck, and joy.</p>
+          <div class="product-price">₱1,299</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('The Prosperity Bouquet', 1299, document.getElementById('img-prosperity').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="customized" onclick="openProductModal('Ferrero Golden Romance', '₱1,599', 'A sweet indulgence featuring rich Ferrero Rocher chocolates beautifully arranged.', ['images/ferrero.jpg'])">
         <div class="img-container">
           <span class="badge">Customized</span>
-          <img src="images/ferrero.jpg" onerror="this.src='ferrero.jpg'" alt="Ferrero Golden Romance Bouquet" id="img-ferrero">
+          <img src="images/ferrero.jpg" alt="Ferrero Golden Romance Bouquet" id="img-ferrero" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="product-details">
           <h3>Ferrero Golden Romance</h3>
-          <p>A sweet indulgence featuring rich Ferrero Rocher chocolates beautifully arranged with delicate floral accents.</p>
+          <p>A sweet indulgence featuring rich Ferrero Rocher chocolates beautifully arranged.</p>
           <div class="product-price">₱1,599</div>
-          <button class="btn-primary" onclick="addToCart('Ferrero Golden Romance', 1599, document.getElementById('img-ferrero').src)">Add to Basket</button>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ferrero Golden Romance', 1599, document.getElementById('img-ferrero').src)">Add to Basket</button>
         </div>
       </div>
-    </div>
-  </main>
 
-  <footer>
+      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Midnight Velvet Elegance', '₱1,399', 'Hand-arranged premium selection crafted specially to elevate your celebrations.', ['images/MVEa.jpg', 'images/MVEb.jpg', 'images/MVEc.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ Featured Bloom</span>
+          <img src="images/MVEa.jpg" alt="Midnight Velvet Elegance" id="img-mve" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-mve', 'images/MVEa.jpg', this)"><img src="images/MVEa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-mve', 'images/MVEb.jpg', this)"><img src="images/MVEb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-mve', 'images/MVEc.jpg', this)"><img src="images/MVEc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Midnight Velvet Elegance</h3>
+          <p>Hand-arranged premium selection crafted specially to elevate your celebrations.</p>
+          <div class="product-price">₱1,399</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Midnight Velvet Elegance', 1399, document.getElementById('img-mve').src)">Add to Basket</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item">
+      <h4>Same Day Delivery</h4>
+      <p>Fast delivery across the area</p>
+    </div>
+    <div class="trust-item">
+      <h4>Lasting Beauty</h4>
+      <p>Preserved to last</p>
+    </div>
+    <div class="trust-item">
+      <h4>Handcrafted Daily</h4>
+      <p>Arranged by artisan florists</p>
+    </div>
+    <div class="trust-item">
+      <h4>Bespoke Cards</h4>
+      <p>Free personalized card included</p>
+    </div>
+  </div>
+
+  <section class="story-section" id="about">
+    <div class="story-img-container">
+      <img src="images/signature.jpg" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=800&q=80'" alt="Our Story Bouquet">
+    </div>
+    <div class="story-content">
+      <h2>Crafted with Dedication & Heart</h2>
+      <div class="story-full-content" id="storyFullContent">
+        <p>ALIRY Flower Studio began with a simple love for flowers and the joy of creating something beautiful by hand.</p>
+        <p>For us, every bouquet is more than an arrangement. It is a collection of carefully chosen flowers, colors, and details, brought together with thought and intention. We take our time with each creation because we believe the little things are what make a bouquet truly special.</p>
+        <p>Flowers have a quiet way of saying what words sometimes cannot. They can celebrate love, remember a milestone, brighten an ordinary day, or simply remind someone that they are thought of.</p>
+        <p>At ALIRY, we create floral arrangements that feel personal, timeless, and effortlessly elegant. Each piece is made with care, from the first flower chosen to the final detail, so that every bouquet becomes part of a moment worth remembering.</p>
+        <div class="story-fade-overlay" id="storyFadeOverlay"></div>
+      </div>
+      <a href="#flowers" class="btn-primary" style="margin-top: 15px;">Explore Collections</a>
+    </div>
+  </section>
+
+  <!-- COMING SOON BUILDER SECTION -->
+  <section class="section-padding builder-section" id="builder">
+    <div class="builder-coming-soon-card">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <h3>Build Your Own Bouquet</h3>
+      <p>Create a bouquet that's uniquely yours.</p>
+      <p class="desc-sub">Choose your flowers, wrapping, colors, and finishing touches. Our custom builder is currently in development.</p>
+      
+      <form class="notify-form" onsubmit="event.preventDefault(); alert('Thank you! We will notify you when the builder launches.');">
+        <input type="email" class="notify-input" placeholder="Enter your email for updates..." required>
+        <button type="submit" class="btn-primary" style="padding: 12px 20px; font-size: 10px;">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section-padding reviews-section" id="reviews">
+    <div class="section-header">
+      <h2>What Our Clients Say</h2>
+      <p>Share your floral journey with us.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">☆☆☆☆☆</div>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--primary); margin-bottom: 10px; font-weight: 500;">Be Our First Reviewer</h3>
+        <p style="font-style: normal; color: var(--text-muted); margin-bottom: 20px;">We have just blossomed and are ready to create magic for you. Order your first arrangement and leave your thoughts here!</p>
+        <a href="#flowers" class="btn-primary">Shop Our Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-col" id="contactInfoCol">
+        <h4>ALIRY. FLOWER STUDIO</h4>
+        <p style="font-size:12px; color:#ccc; line-height:1.6; margin-bottom: 12px;">
+          We create long-lasting, highly personalized floral gifts for people who want something more meaningful than ordinary fresh flowers.
+        </p>
+        
+        <div class="social-icons-container" id="socialIconsContainer">
+          <a href="https://www.facebook.com/share/1QPPPz22Bi/" target="_blank" class="social-icon-link facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com" target="_blank" class="social-icon-link tiktok" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.242V2h-3.445v13.672a2.896 2.896 0 0 1-5.01 1.953 2.892 2.892 0 0 1 1.025-4.444v-3.414a6.335 6.335 0 0 0-4.44 6.091 6.338 6.338 0 0 0 6.34 6.339 6.342 6.342 0 0 0 6.34-6.339V8.675a8.19 8.19 0 0 0 4.77 1.52v-3.47a4.795 4.795 0 0 1-2.25-0.039z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/aliry.flowerstudio?stkn=MWp4eGdtd3JjcDE4NA==" target="_blank" class="social-icon-link instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.28-.073-1.689-.073-4.948 0-3.259.014-3.668.072-4.948.2-4.358 2.618-6.78 6.98-6.98 1.281-.058 1.689-.072 4.948-.072 3.259 0 3.668.014 4.948.072 4.354.2 6.782 2.618 6.979 6.98.059 1.28.073 1.689.073 4.948 0 3.259-.014 3.667-.072 4.947-.196 4.354-2.617 6.78-6.979 6.98-1.281.059-1.69.073-4.949.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>SHOP OCCASIONS</h4>
+        <ul>
+          <li><a href="#flowers" onclick="filterCategory('customized');">Customized</a></li>
+          <li><a href="#flowers" onclick="filterCategory('preserved');">Preserve Bouquet</a></li>
+          <li><a href="#flowers" onclick="filterCategory('bestseller');">Best Seller</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>CUSTOMER CARE</h4>
+        <ul>
+          <li><a href="#" onclick="openModal('deliveryModal')">Delivery Information</a></li>
+          <li><a href="#" onclick="openModal('careModal')">Flower Care Guide</a></li>
+          <li><a href="#" onclick="openModal('termsModal')">Terms of Service</a></li>
+          <li><a href="#" onclick="openModal('privacyModal')">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>CONTACT US</h4>
+        <p style="font-size:12px; color:#ccc; line-height:1.8;">
+          📍 Dasmariñas Cavite, Philippines<br>
+          📞 Phone: 0939-228-5049<br>
+          📧 Email: aliryflowerstudio@gmail.com
+        </p>
+      </div>
+    </div>
+
     <div class="footer-bottom">
-      <p>© 2026 ALIRY. Flower Studio. All Rights Reserved. | Flowers That Stay</p>
+      <p>© 2026 ALIRY. Flower Studio. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- FULL PRODUCT VIEW MODAL WITH CAROUSEL -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-content product-quick-view-content">
+      <button class="modal-close" onclick="closeModal('productModal')">&times;</button>
+      
+      <div class="quick-view-img-container">
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="modalCarouselTrack">
+            <!-- Dynamically injected carousel slides -->
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="modalPrevBtn" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="carousel-btn next" id="modalNextBtn" onclick="moveCarousel(1)">&#10095;</button>
+        <div class="carousel-dots" id="modalCarouselDots"></div>
+      </div>
+
+      <div class="quick-view-details">
+        <h3 id="modalProductName">Product Name</h3>
+        <p id="modalProductDesc">Product Description</p>
+        <div class="quick-view-price" id="modalProductPrice">₱0</div>
+        <button class="btn-primary" id="modalAddToCartBtn">Add to Basket</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="deliveryModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('deliveryModal')">&times;</button>
+      <h3>Delivery Information</h3>
+      <p>At ALIRY. Flower Studio, we make sure every order arrives securely and on time.</p>
+      <ul>
+        <li><strong>Same-Day Delivery:</strong> Available for orders confirmed before 2:00 PM within Dasmariñas, Cavite and nearby areas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="careModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('careModal')">&times;</button>
+      <h3>Flower Care Guide</h3>
+      <p>Keep your handmade blooms looking pristine:</p>
+      <ul>
+        <li><strong>Preserved & Dried Flowers:</strong> Keep away from direct sunlight, high humidity, and water.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+      <h3>Terms of Service</h3>
+      <p>By placing an order with us, you agree to our policies regarding custom handcrafted variations and confirmation steps.</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+      <h3>Privacy Policy</h3>
+      <p>We collect only necessary information to process and deliver your orders securely.</p>
+    </div>
+  </div>
 
   <div class="overlay" id="overlay"></div>
 
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
-      <h3>Your Basket</h3>
+      <h3 style="color:var(--primary); font-weight:normal;">Your Shopping Basket</h3>
       <button class="close-btn" id="closeCartBtn">&times;</button>
     </div>
     
@@ -589,29 +1640,164 @@
         <span>Total:</span>
         <span id="cartTotal">₱0</span>
       </div>
-      <button class="btn-primary" style="width:100%; text-align:center;" onclick="proceedToMessengerCheckout()">Complete Purchase via Messenger</button>
+      <button class="btn-primary" style="width:100%; text-align:center;" onclick="proceedToMessengerCheckout()">Complete Purchase</button>
     </div>
   </aside>
 
   <script>
-    let cart = JSON.parse(localStorage.getItem('aliry_catalog_cart')) || [];
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!window.location.hash) {
+        document.getElementById('flowers').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    let cart = JSON.parse(localStorage.getItem('aliry_cart')) || [];
+    let currentSlideIndex = 0;
+    let totalSlides = 0;
 
     const overlay = document.getElementById('overlay');
     const cartDrawer = document.getElementById('cartDrawer');
     const cartToggleBtn = document.getElementById('cartToggleBtn');
     const closeCartBtn = document.getElementById('closeCartBtn');
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeMobileNav = document.getElementById('closeMobileNav');
 
     cartToggleBtn.addEventListener('click', toggleCart);
     closeCartBtn.addEventListener('click', toggleCart);
     overlay.addEventListener('click', () => {
       if (cartDrawer.classList.contains('active')) toggleCart();
+      if (mobileNav.classList.contains('active')) toggleMobileNav();
+      closeModal('productModal');
     });
+
+    menuToggleBtn.addEventListener('click', toggleMobileNav);
+    closeMobileNav.addEventListener('click', toggleMobileNav);
 
     updateCartUI();
 
     function toggleCart() {
       cartDrawer.classList.toggle('active');
-      overlay.style.display = cartDrawer.classList.contains('active') ? 'block' : 'none';
+      overlay.style.display = cartDrawer.classList.contains('active') || mobileNav.classList.contains('active') ? 'block' : 'none';
+    }
+
+    function toggleMobileNav() {
+      mobileNav.classList.toggle('active');
+      overlay.style.display = mobileNav.classList.contains('active') || cartDrawer.classList.contains('active') ? 'block' : 'none';
+    }
+
+    function expandStory(event) {
+      if (event) event.preventDefault();
+      const storySection = document.getElementById('about');
+      const storyContent = document.getElementById('storyFullContent');
+      
+      storySection.scrollIntoView({ behavior: 'smooth' });
+      storyContent.classList.add('expanded');
+    }
+
+    function highlightContact() {
+      const contactCol = document.getElementById('contactInfoCol');
+      const socialContainer = document.getElementById('socialIconsContainer');
+      contactCol.classList.add('highlight-contact');
+      socialContainer.classList.add('highlight-socials');
+      setTimeout(() => { 
+        contactCol.classList.remove('highlight-contact'); 
+        socialContainer.classList.remove('highlight-socials'); 
+      }, 1800);
+    }
+
+    function openModal(modalId) { document.getElementById(modalId).classList.add('active'); }
+    function closeModal(modalId) { 
+      document.getElementById(modalId).classList.remove('active');
+      if (!cartDrawer.classList.contains('active') && !mobileNav.classList.contains('active')) {
+        overlay.style.display = 'none';
+      }
+    }
+
+    function openProductModal(name, priceStr, desc, images) {
+      document.getElementById('modalProductName').textContent = name;
+      document.getElementById('modalProductPrice').textContent = priceStr;
+      document.getElementById('modalProductDesc').textContent = desc;
+
+      const track = document.getElementById('modalCarouselTrack');
+      const dotsContainer = document.getElementById('modalCarouselDots');
+      track.innerHTML = '';
+      dotsContainer.innerHTML = '';
+      
+      currentSlideIndex = 0;
+      totalSlides = images.length;
+
+      images.forEach((imgSrc, idx) => {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-slide';
+        slide.innerHTML = `<img src="${imgSrc}" alt="${name} view ${idx + 1}" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">`;
+        track.appendChild(slide);
+
+        const dot = document.createElement('button');
+        dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(idx);
+        dotsContainer.appendChild(dot);
+      });
+
+      const prevBtn = document.getElementById('modalPrevBtn');
+      const nextBtn = document.getElementById('modalNextBtn');
+      if (totalSlides > 1) {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+        dotsContainer.style.display = 'flex';
+      } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        dotsContainer.style.display = 'none';
+      }
+
+      updateCarouselPosition();
+
+      const numericPrice = parseInt(priceStr.replace(/[^0-9]/g, ''));
+      const addBtn = document.getElementById('modalAddToCartBtn');
+      addBtn.onclick = function() {
+        addToCart(name, numericPrice, images[0]);
+        closeModal('productModal');
+      };
+
+      document.getElementById('productModal').classList.add('active');
+      overlay.style.display = 'block';
+    }
+
+    function moveCarousel(direction) {
+      currentSlideIndex += direction;
+      if (currentSlideIndex < 0) {
+        currentSlideIndex = totalSlides - 1;
+      } else if (currentSlideIndex >= totalSlides) {
+        currentSlideIndex = 0;
+      }
+      updateCarouselPosition();
+    }
+
+    function goToSlide(index) {
+      currentSlideIndex = index;
+      updateCarouselPosition();
+    }
+
+    function updateCarouselPosition() {
+      const track = document.getElementById('modalCarouselTrack');
+      track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function switchProductImage(imgId, imageSrc, buttonEl) {
+      document.getElementById(imgId).src = imageSrc;
+      const parentSelector = buttonEl.closest('.thumbnail-selector');
+      parentSelector.querySelectorAll('.thumb-btn').forEach(btn => btn.classList.remove('active'));
+      buttonEl.classList.add('active');
     }
 
     function addToCart(name, price, image) {
@@ -640,7 +1826,7 @@
     }
 
     function updateCartUI() {
-      localStorage.setItem('aliry_catalog_cart', JSON.stringify(cart));
+      localStorage.setItem('aliry_cart', JSON.stringify(cart));
 
       const cartItemsContainer = document.getElementById('cartItems');
       const cartBadge = document.getElementById('cartBadge');
@@ -668,7 +1854,7 @@
           el.className = 'cart-item';
           el.innerHTML = `
             <input type="checkbox" ${item.selected ? 'checked' : ''} onchange="toggleSelectItem(${index})" style="cursor: pointer;">
-            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=100&q=80'">
             <div class="cart-item-details">
               <h4 style="font-weight:normal; font-size:13px; font-family:'Playfair Display', serif;">${item.name}</h4>
               <p style="font-size:11px; color:var(--primary); margin-top:2px;">₱${item.price.toLocaleString()} x ${item.quantity}</p>
@@ -703,6 +1889,7 @@
         if (category === 'all' || cardCategories.includes(category)) card.classList.remove('hidden');
         else card.classList.add('hidden');
       });
+      document.getElementById('flowers').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function proceedToMessengerCheckout() {
@@ -713,7 +1900,7 @@
       }
       
       const pageId = "1269798289555332";
-      let orderMessage = "Hello ALIRY Flower Studio! I would like to place an order from your product catalog for the selected items:\n\n";
+      let orderMessage = "Hello ALIRY Flower Studio! I would like to place an order for the selected items:\n\n";
       let totalPrice = 0;
       
       activeItems.forEach((item, index) => {
