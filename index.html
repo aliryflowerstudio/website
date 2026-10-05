@@ -1220,7 +1220,6 @@
         <ul>
           <li><a href="#flowers">Occasions</a></li>
           <li><a href="#about" onclick="expandStory(event)">Our Story</a></li>
-          <li><a href="#builder">Custom Builder</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#contact" onclick="highlightContact()">Contact</a></li>
         </ul>
@@ -1235,8 +1234,9 @@
 
     <div class="categories-bar">
       <button class="category-tab active" onclick="filterCategory('all', this)">All</button>
-      <button class="category-tab" onclick="filterCategory('preserved', this)">Preserve Bouquet</button>
-      <button class="category-tab" onclick="filterCategory('customized', this)">Customized</button>
+      <button class="category-tab" onclick="filterCategory('preserved', this)">Preserved Flowers</button>
+      <button class="category-tab" onclick="filterCategory('dried', this)">Dried Flowers</button>
+      <button class="category-tab" onclick="filterCategory('wedding', this)">Wedding Bouquet</button>
       <button class="category-tab" onclick="filterCategory('bestseller', this)">Best Seller</button>
     </div>
   </header>
@@ -1249,7 +1249,6 @@
     <ul>
       <li><a href="#flowers" onclick="toggleMobileNav()">Occasions</a></li>
       <li><a href="#about" onclick="toggleMobileNav(); expandStory();">Our Story</a></li>
-      <li><a href="#builder" onclick="toggleMobileNav()">Custom Builder</a></li>
       <li><a href="#reviews" onclick="toggleMobileNav()">Reviews</a></li>
       <li><a href="#contact" onclick="toggleMobileNav(); highlightContact();">Contact</a></li>
     </ul>
@@ -1758,30 +1757,13 @@
       <img src="images/signature.jpg" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=800&q=80'" alt="Our Story Bouquet">
     </div>
     <div class="story-content">
-      <h2>Crafted with Dedication & Heart</h2>
+      <h2>Created with a love for flowers and an eye for detail.</h2>
       <div class="story-full-content" id="storyFullContent">
-        <p>ALIRY Flower Studio began with a simple love for flowers and the joy of creating something beautiful by hand.</p>
-        <p>For us, every bouquet is more than an arrangement. It is a collection of carefully chosen flowers, colors, and details, brought together with thought and intention. We take our time with each creation because we believe the little things are what make a bouquet truly special.</p>
-        <p>Flowers have a quiet way of saying what words sometimes cannot. They can celebrate love, remember a milestone, brighten an ordinary day, or simply remind someone that they are thought of.</p>
-        <p>At ALIRY, we create floral arrangements that feel personal, timeless, and effortlessly elegant. Each piece is made with care, from the first flower chosen to the final detail, so that every bouquet becomes part of a moment worth remembering.</p>
+        <p>ALIRY Flower Studio began with a simple love for flowers and a passion for creating arrangements that feel personal.</p>
+        <p>Behind every ALIRY arrangement is a young florist with years of experience in flower arranging, continuously refining her craft through creativity, patience, and attention to detail.</p>
         <div class="story-fade-overlay" id="storyFadeOverlay"></div>
       </div>
       <a href="#flowers" class="btn-primary" style="margin-top: 15px;">Explore Collections</a>
-    </div>
-  </section>
-
-  <!-- COMING SOON BUILDER SECTION -->
-  <section class="section-padding builder-section" id="builder">
-    <div class="builder-coming-soon-card">
-      <span class="coming-soon-badge">Coming Soon</span>
-      <h3>Build Your Own Bouquet</h3>
-      <p>Create a bouquet that's uniquely yours.</p>
-      <p class="desc-sub">Choose your flowers, wrapping, colors, and finishing touches. Our custom builder is currently in development.</p>
-      
-      <form class="notify-form" onsubmit="event.preventDefault(); alert('Thank you! We will notify you when the builder launches.');">
-        <input type="email" class="notify-input" placeholder="Enter your email for updates..." required>
-        <button type="submit" class="btn-primary" style="padding: 12px 20px; font-size: 10px;">Notify Me</button>
-      </form>
     </div>
   </section>
 
@@ -1982,8 +1964,24 @@
       }
       const productCards = document.querySelectorAll('.products-grid .product-card');
       productCards.forEach(card => {
-        const categories = card.getAttribute('data-category');
-        if (category === 'all' || (categories && categories.includes(category))) {
+        const categories = card.getAttribute('data-category') || '';
+        const productName = (card.querySelector('.product-details h3')?.textContent || '').toLowerCase();
+        const productDescription = (card.querySelector('.product-details p')?.textContent || '').toLowerCase();
+        let matchesCategory = false;
+
+        if (category === 'all') {
+          matchesCategory = true;
+        } else if (category === 'preserved') {
+          matchesCategory = categories.includes('preserved');
+        } else if (category === 'dried') {
+          matchesCategory = categories.includes('dried') || productDescription.includes('dried');
+        } else if (category === 'wedding') {
+          matchesCategory = categories.includes('wedding') || /wedding|corsage|boutonniere/.test(productName + ' ' + productDescription);
+        } else if (category === 'bestseller') {
+          matchesCategory = categories.includes('bestseller');
+        }
+
+        if (matchesCategory) {
           card.classList.remove('hidden');
         } else {
           card.classList.add('hidden');
