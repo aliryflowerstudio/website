@@ -1234,8 +1234,7 @@
 
     <div class="categories-bar">
       <button class="category-tab active" onclick="filterCategory('all', this)">All</button>
-      <button class="category-tab" onclick="filterCategory('preserved', this)">Preserved Flowers</button>
-      <button class="category-tab" onclick="filterCategory('dried', this)">Dried Flowers</button>
+      <button class="category-tab" onclick="filterCategory('preserved-dried', this)">Preserved and Dried Flowers</button>
       <button class="category-tab" onclick="filterCategory('wedding', this)">Wedding Bouquet</button>
       <button class="category-tab" onclick="filterCategory('bestseller', this)">Best Seller</button>
     </div>
@@ -1971,10 +1970,8 @@
 
         if (category === 'all') {
           matchesCategory = true;
-        } else if (category === 'preserved') {
-          matchesCategory = categories.includes('preserved');
-        } else if (category === 'dried') {
-          matchesCategory = categories.includes('dried') || productDescription.includes('dried');
+        } else if (category === 'preserved-dried') {
+          matchesCategory = categories.includes('preserved') || categories.includes('dried') || productDescription.includes('preserved') || productDescription.includes('dried');
         } else if (category === 'wedding') {
           matchesCategory = categories.includes('wedding') || /wedding|corsage|boutonniere/.test(productName + ' ' + productDescription);
         } else if (category === 'bestseller') {
@@ -2146,7 +2143,7 @@
         total += item.price * item.quantity;
       });
       message += `%0ATotal: ₱${total.toLocaleString()}%0APlease let me know the next steps for delivery and payment. Thank you!`;
-      window.open(`https://m.me/aliryflowerstudio?text=${encodeURIComponent(message)}`, '_blank');
+      window.open(`https://m.me/aliryflowerstudio?text=${message}`, '_blank');
     }
 
     function expandStory(event) {
