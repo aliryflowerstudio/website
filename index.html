@@ -644,6 +644,20 @@
       margin-top: auto;
     }
 
+    .original-price {
+      text-decoration: line-through;
+      text-decoration-thickness: 1.5px;
+      color: var(--text-muted);
+      font-size: 0.78em;
+      font-weight: 400;
+      margin-right: 6px;
+    }
+
+    .discounted-price {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
     .btn-primary {
       display: inline-block;
       padding: 10px 20px;
@@ -860,6 +874,14 @@
       color: var(--primary);
       font-weight: 700;
       margin-bottom: 20px;
+    }
+
+    .quick-view-price .original-price {
+      font-size: 0.75em;
+    }
+
+    .quick-view-price .discounted-price {
+      font-size: 1em;
     }
 
     .modal-content h3 {
@@ -1242,7 +1264,7 @@
     <div class="products-grid">
 
       <!-- Prosperity Bouquet -->
-      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Prosperity Bouquet', '₱999', 'A gorgeous arrangement designed to bring abundance, luck, and timeless beauty into any space.', ['images/PROSPERITYa.jpg', 'images/PROSPERITYb.jpg', 'images/PROSPERITYc.jpg'])">
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Prosperity Bouquet', '₱1299', '25 pieces bills with dried pink hydra and bunny tail', ['images/PROSPERITYa.jpg', 'images/PROSPERITYb.jpg', 'images/PROSPERITYc.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/PROSPERITYa.jpg" alt="Prosperity Bouquet" id="img-prosperity" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1254,14 +1276,14 @@
         </div>
         <div class="product-details">
           <h3>Prosperity Bouquet</h3>
-          <p>A gorgeous arrangement designed to bring abundance, luck, and timeless beauty into any space.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Prosperity Bouquet', 999, document.getElementById('img-prosperity').src)">Add to Basket</button>
+          <p>25 pieces bills with dried pink hydra and bunny tail</p>
+          <div class="product-price">₱1,299</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Prosperity Bouquet', 1299, document.getElementById('img-prosperity').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Sweet Passion -->
-      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Sweet Passion', '₱999', 'A passionate and vibrant floral arrangement designed to express deep admiration and lasting love.', ['images/PASSIONa.jpg', 'images/PASSIONb.jpg', 'images/PASSIONc.jpg'])">
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Sweet Passion', '₱899|₱650', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/PASSIONa.jpg', 'images/PASSIONb.jpg', 'images/PASSIONc.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/PASSIONa.jpg" alt="Sweet Passion" id="img-sweetpassion" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1273,14 +1295,14 @@
         </div>
         <div class="product-details">
           <h3>Sweet Passion</h3>
-          <p>A passionate and vibrant floral arrangement designed to express deep admiration and lasting love.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Sweet Passion', 999, document.getElementById('img-sweetpassion').src)">Add to Basket</button>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱899</span><span class="discounted-price">₱650</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Sweet Passion', 650, document.getElementById('img-sweetpassion').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Wrist Corsage & Boutonniere Set -->
-      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Wrist Corsage & Boutonniere Set', '₱699', 'An elegant matching wrist corsage and boutonniere set crafted for weddings, proms, and special occasions.', ['images/CORSAGEa.jpg', 'images/CORSAGEb.jpg', 'images/CORSAGEc.jpg', 'images/CORSAGEd.jpg'])">
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Wrist Corsage & Boutonniere Set', '₱599|₱450', 'Faux flowers/ Artificial flowers', ['images/CORSAGEa.jpg', 'images/CORSAGEb.jpg', 'images/CORSAGEc.jpg', 'images/CORSAGEd.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/CORSAGEa.jpg" alt="Wrist Corsage & Boutonniere Set" id="img-corsageset" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1293,14 +1315,14 @@
         </div>
         <div class="product-details">
           <h3>Wrist Corsage & Boutonniere Set</h3>
-          <p>An elegant matching wrist corsage and boutonniere set crafted for weddings, proms, and special occasions.</p>
-          <div class="product-price">₱699</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Wrist Corsage & Boutonniere Set', 699, document.getElementById('img-corsageset').src)">Add to Basket</button>
+          <p>Faux flowers/ Artificial flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Wrist Corsage & Boutonniere Set', 450, document.getElementById('img-corsageset').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Preserved Hydra -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Hydra', '₱999', 'A beautifully preserved floral arrangement crafted to bring lasting elegance and natural beauty to any occasion.', ['images/HYDRAa.jpg', 'images/HYDRAb.jpg', 'images/HYDRAc.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Hydra', '₱599|₱399', 'Made of 100% real preserved and dried flowers', ['images/HYDRAa.jpg', 'images/HYDRAb.jpg', 'images/HYDRAc.jpg'])">
         <div class="img-container">
           <span class="badge">Preserved</span>
           <img src="images/HYDRAa.jpg" alt="Preserved Hydra" id="img-hydra" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1312,14 +1334,14 @@
         </div>
         <div class="product-details">
           <h3>Preserved Hydra</h3>
-          <p>A beautifully preserved floral arrangement crafted to bring lasting elegance and natural beauty to any occasion.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Hydra', 999, document.getElementById('img-hydra').src)">Add to Basket</button>
+          <p>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱399</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Hydra', 399, document.getElementById('img-hydra').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Whisper of Pink -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Whisper of Pink', '₱999', 'A soft, romantic arrangement featuring delicate pink blooms and exquisite styling.', ['images/PINKa.jpg', 'images/PINKb.jpg', 'images/PINKc.jpg', 'images/PINKd.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Whisper of Pink', '₱2,000|₱1,599', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/PINKa.jpg', 'images/PINKb.jpg', 'images/PINKc.jpg', 'images/PINKd.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/PINKa.jpg" alt="Whisper of Pink" id="img-whisperpink" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1332,14 +1354,14 @@
         </div>
         <div class="product-details">
           <h3>Whisper of Pink</h3>
-          <p>A soft, romantic arrangement featuring delicate pink blooms and exquisite styling.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Whisper of Pink', 999, document.getElementById('img-whisperpink').src)">Add to Basket</button>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱2,000</span><span class="discounted-price">₱1,599</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Whisper of Pink', 1599, document.getElementById('img-whisperpink').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Mini Frost Celestial Bouquet -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Frost Celestial Bouquet', '₱899', 'An enchanting, compact celestial arrangement designed with delicate frosted details.', ['images/MCFBa.jpg', 'images/MCFBb.jpg', 'images/MCFBc.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Frost Celestial Bouquet', '₱499|₱350', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/MCFBa.jpg', 'images/MCFBb.jpg', 'images/MCFBc.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/MCFBa.jpg" alt="Mini Frost Celestial Bouquet" id="img-minifrost" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1351,13 +1373,13 @@
         </div>
         <div class="product-details">
           <h3>Mini Frost Celestial Bouquet</h3>
-          <p>An enchanting, compact celestial arrangement designed with delicate frosted details.</p>
-          <div class="product-price">₱899</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Frost Celestial Bouquet', 899, document.getElementById('img-minifrost').src)">Add to Basket</button>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱499</span><span class="discounted-price">₱350</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Frost Celestial Bouquet', 350, document.getElementById('img-minifrost').src)">Add to Basket</button>
         </div>
       </div>
 
-      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Midnight Velvet Elegance', '₱1,399', 'Hand-arranged premium selection crafted specially to elevate your celebrations.', ['images/MVEa.jpg', 'images/MVEb.jpg', 'images/MVEc.jpg'])">
+      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Midnight Velvet Elegance', '₱2,600|₱1,999', '9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso', ['images/MVEa.jpg', 'images/MVEb.jpg', 'images/MVEc.jpg'])">
         <div class="img-container">
           <span class="badge">✨ Featured Bloom</span>
           <img src="images/MVEa.jpg" alt="Midnight Velvet Elegance" id="img-mve" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1369,17 +1391,17 @@
         </div>
         <div class="product-details">
           <h3>Midnight Velvet Elegance</h3>
-          <p>Hand-arranged premium selection crafted specially to elevate your celebrations.</p>
-          <div class="product-price">₱1,399</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Midnight Velvet Elegance', 1399, document.getElementById('img-mve').src)">Add to Basket</button>
+          <p>9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso</p>
+          <div class="product-price"><span class="original-price">₱2,600</span><span class="discounted-price">₱1,999</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Midnight Velvet Elegance', 1999, document.getElementById('img-mve').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Blush Amour Bouquet -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Blush Amour Bouquet', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/1a.jpg', 'images/1b.jpg', 'images/1c.jpg'])">
+      <!-- Blush Amour -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Blush Amour', '₱599|₱450', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/1a.jpg', 'images/1b.jpg', 'images/1c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/1a.jpg" alt="Blush Amour Bouquet" id="img-product1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/1a.jpg" alt="Blush Amour" id="img-product1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
           <button class="thumb-btn active" onclick="switchProductImage('img-product1', 'images/1a.jpg', this)"><img src="images/1a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
@@ -1387,33 +1409,33 @@
           <button class="thumb-btn " onclick="switchProductImage('img-product1', 'images/1c.jpg', this)"><img src="images/1c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Blush Amour Bouquet</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Blush Amour Bouquet', 999, document.getElementById('img-product1').src)">Add to Basket</button>
+          <h3>Blush Amour</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Blush Amour', 450, document.getElementById('img-product1').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Crimson Grace Arrangement -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Crimson Grace Arrangement', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/2a.jpg', 'images/2b.jpg'])">
+      <!-- Crimson Grace -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Crimson Grace', '₱599|₱450', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/2a.jpg', 'images/2b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/2a.jpg" alt="Crimson Grace Arrangement" id="img-product2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/2a.jpg" alt="Crimson Grace" id="img-product2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
           <button class="thumb-btn active" onclick="switchProductImage('img-product2', 'images/2a.jpg', this)"><img src="images/2a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
           <button class="thumb-btn " onclick="switchProductImage('img-product2', 'images/2b.jpg', this)"><img src="images/2b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Crimson Grace Arrangement</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Crimson Grace Arrangement', 999, document.getElementById('img-product2').src)">Add to Basket</button>
+          <h3>Crimson Grace</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Crimson Grace', 450, document.getElementById('img-product2').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Golden Amber Preserved Bloom -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Golden Amber Preserved Bloom', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/3a.jpg', 'images/3b.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Golden Amber Preserved Bloom', '₱3,399|₱2,599', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/3a.jpg', 'images/3b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/3a.jpg" alt="Golden Amber Preserved Bloom" id="img-product3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1424,17 +1446,17 @@
         </div>
         <div class="product-details">
           <h3>Golden Amber Preserved Bloom</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Golden Amber Preserved Bloom', 999, document.getElementById('img-product3').src)">Add to Basket</button>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱3,399</span><span class="discounted-price">₱2,599</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Golden Amber Preserved Bloom', 2599, document.getElementById('img-product3').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Lavender Serenade -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Lavender Serenade', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/4a.jpg', 'images/4b.jpg', 'images/4c.jpg'])">
+      <!-- Raya -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Raya', '₱1,500|₱999', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/4a.jpg', 'images/4b.jpg', 'images/4c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/4a.jpg" alt="Lavender Serenade" id="img-product4" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/4a.jpg" alt="Raya" id="img-product4" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
           <button class="thumb-btn active" onclick="switchProductImage('img-product4', 'images/4a.jpg', this)"><img src="images/4a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
@@ -1442,15 +1464,15 @@
           <button class="thumb-btn " onclick="switchProductImage('img-product4', 'images/4c.jpg', this)"><img src="images/4c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Lavender Serenade</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Lavender Serenade', 999, document.getElementById('img-product4').src)">Add to Basket</button>
+          <h3>Raya</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱1,500</span><span class="discounted-price">₱999</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Raya', 999, document.getElementById('img-product4').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Ivory Whisper Dream -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Ivory Whisper Dream', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/5a.jpg', 'images/5b.jpg', 'images/5c.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Ivory Whisper Dream', '₱1,500|₱999', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/5a.jpg', 'images/5b.jpg', 'images/5c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/5a.jpg" alt="Ivory Whisper Dream" id="img-product5" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1462,14 +1484,14 @@
         </div>
         <div class="product-details">
           <h3>Ivory Whisper Dream</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱1,500</span><span class="discounted-price">₱999</span></div>
           <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ivory Whisper Dream', 999, document.getElementById('img-product5').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Velvet Twilight Cluster -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Velvet Twilight Cluster', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/6a.jpg', 'images/6b.jpg', 'images/6c.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Velvet Twilight Cluster', '₱1,400|₱900', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/6a.jpg', 'images/6b.jpg', 'images/6c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/6a.jpg" alt="Velvet Twilight Cluster" id="img-product6" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1481,14 +1503,14 @@
         </div>
         <div class="product-details">
           <h3>Velvet Twilight Cluster</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Velvet Twilight Cluster', 999, document.getElementById('img-product6').src)">Add to Basket</button>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱1,400</span><span class="discounted-price">₱900</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Velvet Twilight Cluster', 900, document.getElementById('img-product6').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Peach Blossom Elegance -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Peach Blossom Elegance', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/7a.jpg', 'images/7b.jpg', 'images/7c.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Peach Blossom Elegance', '₱2,300|₱1,800', '3 large pink roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/7a.jpg', 'images/7b.jpg', 'images/7c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/7a.jpg" alt="Peach Blossom Elegance" id="img-product7" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1500,17 +1522,17 @@
         </div>
         <div class="product-details">
           <h3>Peach Blossom Elegance</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Peach Blossom Elegance', 999, document.getElementById('img-product7').src)">Add to Basket</button>
+          <p>3 large pink roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
+          <div class="product-price"><span class="original-price">₱2,300</span><span class="discounted-price">₱1,800</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Peach Blossom Elegance', 1800, document.getElementById('img-product7').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Royal Burgundy Keepsake -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Royal Burgundy Keepsake', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/8a.jpg', 'images/8b.jpg', 'images/8c.jpg'])">
+      <!-- Raya -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Raya', '₱1500|₱999', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/8a.jpg', 'images/8b.jpg', 'images/8c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/8a.jpg" alt="Royal Burgundy Keepsake" id="img-product8" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/8a.jpg" alt="Raya" id="img-product8" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
           <button class="thumb-btn active" onclick="switchProductImage('img-product8', 'images/8a.jpg', this)"><img src="images/8a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
@@ -1518,15 +1540,15 @@
           <button class="thumb-btn " onclick="switchProductImage('img-product8', 'images/8c.jpg', this)"><img src="images/8c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Royal Burgundy Keepsake</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Royal Burgundy Keepsake', 999, document.getElementById('img-product8').src)">Add to Basket</button>
+          <h3>Raya</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱1,500</span><span class="discounted-price">₱999</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Raya', 999, document.getElementById('img-product8').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Pastel Symphony -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Pastel Symphony', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/9a.jpg', 'images/9b.jpg', 'images/9c.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Pastel Symphony', '₱1800', '3 large pink roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/9a.jpg', 'images/9b.jpg', 'images/9c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/9a.jpg" alt="Pastel Symphony" id="img-product9" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1538,14 +1560,14 @@
         </div>
         <div class="product-details">
           <h3>Pastel Symphony</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Pastel Symphony', 999, document.getElementById('img-product9').src)">Add to Basket</button>
+          <p>3 large pink roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
+          <div class="product-price">₱1,800</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Pastel Symphony', 1800, document.getElementById('img-product9').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Ethereal White Muse -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Ethereal White Muse', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/10a.jpg', 'images/10b.jpg', 'images/10c.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Ethereal White Muse', '₱1800', '3 large roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/10a.jpg', 'images/10b.jpg', 'images/10c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/10a.jpg" alt="Ethereal White Muse" id="img-product10" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1557,50 +1579,50 @@
         </div>
         <div class="product-details">
           <h3>Ethereal White Muse</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ethereal White Muse', 999, document.getElementById('img-product10').src)">Add to Basket</button>
+          <p>3 large roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
+          <div class="product-price">₱1,800</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ethereal White Muse', 1800, document.getElementById('img-product10').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Starlight Rose Symphony -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Starlight Rose Symphony', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/11a.jpg', 'images/11b.jpg'])">
+      <!-- Mini Starlight Rose -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Starlight Rose', '₱550|₱399', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/11a.jpg', 'images/11b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/11a.jpg" alt="Starlight Rose Symphony" id="img-product11" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/11a.jpg" alt="Mini Starlight Rose" id="img-product11" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
           <button class="thumb-btn active" onclick="switchProductImage('img-product11', 'images/11a.jpg', this)"><img src="images/11a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
           <button class="thumb-btn" onclick="switchProductImage('img-product11', 'images/11b.jpg', this)"><img src="images/11b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Starlight Rose Symphony</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Starlight Rose Symphony', 999, document.getElementById('img-product11').src)">Add to Basket</button>
+          <h3>Mini Starlight Rose</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱550</span><span class="discounted-price">₱399</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Starlight Rose', 399, document.getElementById('img-product11').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Enchanted Garden Preserve -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Enchanted Garden Preserve', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/12a.jpg', 'images/12b.jpg'])">
+      <!-- Elizabeth -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Elizabeth', '₱499|₱350', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/12a.jpg', 'images/12b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/12a.jpg" alt="Enchanted Garden Preserve" id="img-product12" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/12a.jpg" alt="Elizabeth" id="img-product12" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
           <button class="thumb-btn active" onclick="switchProductImage('img-product12', 'images/12a.jpg', this)"><img src="images/12a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
           <button class="thumb-btn" onclick="switchProductImage('img-product12', 'images/12b.jpg', this)"><img src="images/12b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Enchanted Garden Preserve</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Enchanted Garden Preserve', 999, document.getElementById('img-product12').src)">Add to Basket</button>
+          <h3>Elizabeth</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱499</span><span class="discounted-price">₱350</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Elizabeth', 350, document.getElementById('img-product12').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Frost Celestial Bouquet -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Frost Celestial Bouquet', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/13a.jpg', 'images/13b.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Frost Celestial Bouquet', '₱1,800|₱1,199', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/13a.jpg', 'images/13b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/13a.jpg" alt="Frost Celestial Bouquet" id="img-product13" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1611,14 +1633,14 @@
         </div>
         <div class="product-details">
           <h3>Frost Celestial Bouquet</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Frost Celestial Bouquet', 999, document.getElementById('img-product13').src)">Add to Basket</button>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱1,800</span><span class="discounted-price">₱1,199</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Frost Celestial Bouquet', 1199, document.getElementById('img-product13').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Astoria -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Astoria', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/14a.jpg', 'images/14b.jpg', 'images/14c.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Astoria', '₱1999', '1 large rose with 4 medium roses\n100% Natural flowers\nMade of 100% real preserved flowers', ['images/14a.jpg', 'images/14b.jpg', 'images/14c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/14a.jpg" alt="Astoria" id="img-product14" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1630,14 +1652,14 @@
         </div>
         <div class="product-details">
           <h3>Astoria</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Astoria', 999, document.getElementById('img-product14').src)">Add to Basket</button>
+          <p>1 large rose with 4 medium roses<br>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price">₱1,999</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Astoria', 1999, document.getElementById('img-product14').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Nova Blake -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Nova Blake', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/15a.jpg', 'images/15b.jpg', 'images/15c.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Nova Blake', '₱1600', '3 large roses \n100% Natural flowers\nMade of 100% real preserved flowers', ['images/15a.jpg', 'images/15b.jpg', 'images/15c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/15a.jpg" alt="Nova Blake" id="img-product15" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1649,14 +1671,14 @@
         </div>
         <div class="product-details">
           <h3>Nova Blake</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Nova Blake', 999, document.getElementById('img-product15').src)">Add to Basket</button>
+          <p>3 large roses <br>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price">₱1,600</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Nova Blake', 1600, document.getElementById('img-product15').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Alessia -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Alessia', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/16a.jpg', 'images/16b.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Alessia', '₱499', 'wooden daisy and dried flowers', ['images/16a.jpg', 'images/16b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/16a.jpg" alt="Alessia" id="img-product16" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1667,14 +1689,14 @@
         </div>
         <div class="product-details">
           <h3>Alessia</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Alessia', 999, document.getElementById('img-product16').src)">Add to Basket</button>
+          <p>wooden daisy and dried flowers</p>
+          <div class="product-price">₱499</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Alessia', 499, document.getElementById('img-product16').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Maeve -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Maeve', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/17a.jpg', 'images/17b.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Maeve', '₱499', 'wooden flower and dried flowers', ['images/17a.jpg', 'images/17b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/17a.jpg" alt="Maeve" id="img-product17" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1685,14 +1707,14 @@
         </div>
         <div class="product-details">
           <h3>Maeve</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Maeve', 999, document.getElementById('img-product17').src)">Add to Basket</button>
+          <p>wooden flower and dried flowers</p>
+          <div class="product-price">₱499</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Maeve', 499, document.getElementById('img-product17').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Ezrie -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Ezrie', '₱999', 'A beautiful handcrafted floral arrangement from ALIRY Flower Studio.', ['images/18a.jpg', 'images/18b.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Ezrie', '₱499', 'wooden daisy and dried flowers', ['images/18a.jpg', 'images/18b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/18a.jpg" alt="Ezrie" id="img-product18" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1703,9 +1725,9 @@
         </div>
         <div class="product-details">
           <h3>Ezrie</h3>
-          <p>A beautiful handcrafted floral arrangement from ALIRY Flower Studio.</p>
-          <div class="product-price">₱999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ezrie', 999, document.getElementById('img-product18').src)">Add to Basket</button>
+          <p>wooden daisy and dried flowers</p>
+          <div class="product-price">₱499</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ezrie', 499, document.getElementById('img-product18').src)">Add to Basket</button>
         </div>
       </div>
 
@@ -1984,7 +2006,15 @@
 
     function openProductModal(name, price, desc, images) {
       document.getElementById('modalProductName').innerText = name;
-      document.getElementById('modalProductPrice').innerText = price;
+
+      const priceParts = price.split('|');
+      if (priceParts.length === 2) {
+        document.getElementById('modalProductPrice').innerHTML =
+          `<span class="original-price">${priceParts[0]}</span><span class="discounted-price">${priceParts[1]}</span>`;
+      } else {
+        document.getElementById('modalProductPrice').innerText = price;
+      }
+
       document.getElementById('modalProductDesc').innerText = desc;
       
       const track = document.getElementById('modalCarouselTrack');
@@ -2006,7 +2036,7 @@
         dotsContainer.appendChild(dot);
       });
 
-      const numericPrice = parseInt(price.replace(/[^0-9]/g, ''));
+      const numericPrice = parseInt((priceParts.length === 2 ? priceParts[1] : price).replace(/[^0-9]/g, ''));
       const addBtn = document.getElementById('modalAddToCartBtn');
       addBtn.onclick = () => {
         addToCart(name, numericPrice, images[0]);
