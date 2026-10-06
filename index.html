@@ -297,9 +297,16 @@
       border-top: 1px solid var(--border-light);
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+    }
+
+    .categories-bar::-webkit-scrollbar {
+      display: none;
     }
 
     .category-tab {
+      flex-shrink: 0;
       background: none;
       border: none;
       color: var(--text-muted);
@@ -689,17 +696,59 @@
 
     .reviews-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      max-width: 550px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 800px;
       margin: 20px auto 0;
     }
 
     .review-card {
       background: white;
-      padding: 40px 25px;
+      padding: 30px 25px;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.03);
       text-align: center;
+    }
+
+    .review-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #f5cfd5;
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+
+    .review-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .review-source {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .review-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      word-break: break-word;
+    }
+
+    .reviews-more {
+      margin-top: 25px;
     }
 
     .stars {
@@ -1169,6 +1218,7 @@
     @media (max-width: 768px) {
       nav ul { display: none; }
       .menu-toggle { display: block; }
+      .categories-bar { justify-content: flex-start; }
       .story-section { padding: 50px 5%; }
       .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .trust-bar, .footer-grid { grid-template-columns: 1fr; }
@@ -1734,6 +1784,25 @@
         </div>
       </div>
 
+      <!-- Maeve Flora -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Maeve Flora', '₱1999', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/19a.jpg', 'images/19b.jpg', 'images/19c.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/19a.jpg" alt="Maeve Flora" id="img-product19" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product19', 'images/19a.jpg', this)"><img src="images/19a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product19', 'images/19b.jpg', this)"><img src="images/19b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product19', 'images/19c.jpg', this)"><img src="images/19c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Maeve Flora</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price">₱1,999</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Maeve Flora', 1999, document.getElementById('img-product19').src)">Add to Basket</button>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1758,7 +1827,7 @@
 
   <section class="story-section" id="about">
     <div class="story-img-container">
-      <img src="images/signature.jpg" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=800&q=80'" alt="Our Story Bouquet">
+      <img src="images/3a.jpg" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=800&q=80'" alt="Our Story Bouquet">
     </div>
     <div class="story-content">
       <h2>Created with a love for flowers and an eye for detail.</h2>
@@ -1779,11 +1848,22 @@
 
     <div class="reviews-grid">
       <div class="review-card">
-        <div class="stars">☆☆☆☆☆</div>
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--primary); margin-bottom: 10px; font-weight: 500;">Be Our First Reviewer</h3>
-        <p style="font-style: normal; color: var(--text-muted); margin-bottom: 20px;">We have just blossomed and are ready to create magic for you. Order your first arrangement and leave your thoughts here!</p>
-        <a href="#flowers" class="btn-primary">Shop Our Collection</a>
+        <div class="review-avatar">A</div>
+        <div class="review-name">Avhie Mendoza</div>
+        <div class="review-source">👍 Recommends us on Facebook</div>
+        <p class="review-text">supperrr ganda😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍😍</p>
       </div>
+
+      <div class="review-card">
+        <div class="review-avatar">T</div>
+        <div class="review-name">Talia Del Vallè</div>
+        <div class="review-source">👍 Recommends us on Facebook</div>
+        <p class="review-text">SUPER GANDAA I LOVE ITTTT</p>
+      </div>
+    </div>
+
+    <div class="reviews-more">
+      <a href="https://www.facebook.com/share/1QPPPz22Bi/" target="_blank" class="btn-primary">See Reviews on Facebook</a>
     </div>
   </section>
 
@@ -1965,6 +2045,7 @@
       if (btnElement) {
         document.querySelectorAll('.categories-bar .category-tab').forEach(tab => tab.classList.remove('active'));
         btnElement.classList.add('active');
+        btnElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
       const productCards = document.querySelectorAll('.products-grid .product-card');
       productCards.forEach(card => {
