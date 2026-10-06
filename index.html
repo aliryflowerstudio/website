@@ -645,10 +645,11 @@
 
     .product-price {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(14px, 1.1vw, 18px);
+      font-size: clamp(19px, 1.8vw, 26px);
       color: var(--primary);
       font-weight: 700;
-      margin-bottom: 12px;
+      line-height: 1.2;
+      margin-bottom: 14px;
       margin-top: auto;
     }
 
@@ -656,7 +657,7 @@
       text-decoration: line-through;
       text-decoration-thickness: 1.5px;
       color: var(--text-muted);
-      font-size: 0.78em;
+      font-size: 0.62em;
       font-weight: 400;
       margin-right: 6px;
     }
@@ -920,14 +921,14 @@
 
     .quick-view-price {
       font-family: 'Playfair Display', serif;
-      font-size: 20px;
+      font-size: 28px;
       color: var(--primary);
       font-weight: 700;
       margin-bottom: 20px;
     }
 
     .quick-view-price .original-price {
-      font-size: 0.75em;
+      font-size: 0.6em;
     }
 
     .quick-view-price .discounted-price {
@@ -1315,81 +1316,153 @@
     </div>
 
     <div class="products-grid">
-
-      <!-- Prosperity Bouquet -->
-      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Prosperity Bouquet', '₱1299', '25 pieces bills with dried pink hydra and bunny tail', ['images/PROSPERITYa.jpg', 'images/PROSPERITYb.jpg', 'images/PROSPERITYc.jpg'])">
+      <!-- Golden Amber Preserved Bloom -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Golden Amber Preserved Bloom', '₱3,399|₱2,599', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/3a.jpg', 'images/3b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/PROSPERITYa.jpg" alt="Prosperity Bouquet" id="img-prosperity" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/3a.jpg" alt="Golden Amber Preserved Bloom" id="img-product3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYa.jpg', this)"><img src="images/PROSPERITYa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYb.jpg', this)"><img src="images/PROSPERITYb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYc.jpg', this)"><img src="images/PROSPERITYc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn active" onclick="switchProductImage('img-product3', 'images/3a.jpg', this)"><img src="images/3a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product3', 'images/3b.jpg', this)"><img src="images/3b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Prosperity Bouquet</h3>
-          <p>25 pieces bills with dried pink hydra and bunny tail</p>
-          <div class="product-price">₱1,299</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Prosperity Bouquet', 1299, document.getElementById('img-prosperity').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Sweet Passion -->
-      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Sweet Passion', '₱899|₱650', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/PASSIONa.jpg', 'images/PASSIONb.jpg', 'images/PASSIONc.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/PASSIONa.jpg" alt="Sweet Passion" id="img-sweetpassion" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-sweetpassion', 'images/PASSIONa.jpg', this)"><img src="images/PASSIONa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-sweetpassion', 'images/PASSIONb.jpg', this)"><img src="images/PASSIONb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-sweetpassion', 'images/PASSIONc.jpg', this)"><img src="images/PASSIONc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Sweet Passion</h3>
+          <h3>Golden Amber Preserved Bloom</h3>
           <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price"><span class="original-price">₱899</span><span class="discounted-price">₱650</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Sweet Passion', 650, document.getElementById('img-sweetpassion').src)">Add to Basket</button>
+          <div class="product-price"><span class="original-price">₱3,399</span><span class="discounted-price">₱2,599</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Golden Amber Preserved Bloom', 2599, document.getElementById('img-product3').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Wrist Corsage & Boutonniere Set -->
-      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Wrist Corsage & Boutonniere Set', '₱599|₱450', 'Faux flowers/ Artificial flowers', ['images/CORSAGEa.jpg', 'images/CORSAGEb.jpg', 'images/CORSAGEc.jpg', 'images/CORSAGEd.jpg'])">
+      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Midnight Velvet Elegance', '₱2,600|₱1,999', '9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso', ['images/MVEa.jpg', 'images/MVEb.jpg', 'images/MVEc.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ Featured Bloom</span>
+          <img src="images/MVEa.jpg" alt="Midnight Velvet Elegance" id="img-mve" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-mve', 'images/MVEa.jpg', this)"><img src="images/MVEa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-mve', 'images/MVEb.jpg', this)"><img src="images/MVEb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-mve', 'images/MVEc.jpg', this)"><img src="images/MVEc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Midnight Velvet Elegance</h3>
+          <p>9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso</p>
+          <div class="product-price"><span class="original-price">₱2,600</span><span class="discounted-price">₱1,999</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Midnight Velvet Elegance', 1999, document.getElementById('img-mve').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Astoria -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Astoria', '₱1999', '1 large rose with 4 medium roses\n100% Natural flowers\nMade of 100% real preserved flowers', ['images/14a.jpg', 'images/14b.jpg', 'images/14c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/CORSAGEa.jpg" alt="Wrist Corsage & Boutonniere Set" id="img-corsageset" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/14a.jpg" alt="Astoria" id="img-product14" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-corsageset', 'images/CORSAGEa.jpg', this)"><img src="images/CORSAGEa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEb.jpg', this)"><img src="images/CORSAGEb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEc.jpg', this)"><img src="images/CORSAGEc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEd.jpg', this)"><img src="images/CORSAGEd.jpg" alt="Angle 4" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn active" onclick="switchProductImage('img-product14', 'images/14a.jpg', this)"><img src="images/14a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product14', 'images/14b.jpg', this)"><img src="images/14b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product14', 'images/14c.jpg', this)"><img src="images/14c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Wrist Corsage & Boutonniere Set</h3>
-          <p>Faux flowers/ Artificial flowers</p>
-          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Wrist Corsage & Boutonniere Set', 450, document.getElementById('img-corsageset').src)">Add to Basket</button>
+          <h3>Astoria</h3>
+          <p>1 large rose with 4 medium roses<br>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price">₱1,999</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Astoria', 1999, document.getElementById('img-product14').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Preserved Hydra -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Hydra', '₱599|₱399', 'Made of 100% real preserved and dried flowers', ['images/HYDRAa.jpg', 'images/HYDRAb.jpg', 'images/HYDRAc.jpg'])">
+      <!-- Maeve Flora -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Maeve Flora', '₱1999', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/19a.jpg', 'images/19b.jpg', 'images/19c.jpg'])">
         <div class="img-container">
-          <span class="badge">Preserved</span>
-          <img src="images/HYDRAa.jpg" alt="Preserved Hydra" id="img-hydra" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/19a.jpg" alt="Maeve Flora" id="img-product19" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-hydra', 'images/HYDRAa.jpg', this)"><img src="images/HYDRAa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-hydra', 'images/HYDRAb.jpg', this)"><img src="images/HYDRAb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-hydra', 'images/HYDRAc.jpg', this)"><img src="images/HYDRAc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn active" onclick="switchProductImage('img-product19', 'images/19a.jpg', this)"><img src="images/19a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product19', 'images/19b.jpg', this)"><img src="images/19b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product19', 'images/19c.jpg', this)"><img src="images/19c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Preserved Hydra</h3>
-          <p>Made of 100% real preserved and dried flowers</p>
-          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱399</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Hydra', 399, document.getElementById('img-hydra').src)">Add to Basket</button>
+          <h3>Maeve Flora</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price">₱1,999</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Maeve Flora', 1999, document.getElementById('img-product19').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Peach Blossom Elegance -->
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Peach Blossom Elegance', '₱2,300|₱1,800', '3 large pink roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/7a.jpg', 'images/7b.jpg', 'images/7c.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/7a.jpg" alt="Peach Blossom Elegance" id="img-product7" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product7', 'images/7a.jpg', this)"><img src="images/7a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product7', 'images/7b.jpg', this)"><img src="images/7b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product7', 'images/7c.jpg', this)"><img src="images/7c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Peach Blossom Elegance</h3>
+          <p>3 large pink roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
+          <div class="product-price"><span class="original-price">₱2,300</span><span class="discounted-price">₱1,800</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Peach Blossom Elegance', 1800, document.getElementById('img-product7').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Pastel Symphony -->
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Pastel Symphony', '₱1800', '3 large pink roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/9a.jpg', 'images/9b.jpg', 'images/9c.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/9a.jpg" alt="Pastel Symphony" id="img-product9" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product9', 'images/9a.jpg', this)"><img src="images/9a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product9', 'images/9b.jpg', this)"><img src="images/9b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product9', 'images/9c.jpg', this)"><img src="images/9c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Pastel Symphony</h3>
+          <p>3 large pink roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
+          <div class="product-price">₱1,800</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Pastel Symphony', 1800, document.getElementById('img-product9').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Ethereal White Muse -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Ethereal White Muse', '₱1800', '3 large roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/10a.jpg', 'images/10b.jpg', 'images/10c.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/10a.jpg" alt="Ethereal White Muse" id="img-product10" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product10', 'images/10a.jpg', this)"><img src="images/10a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product10', 'images/10b.jpg', this)"><img src="images/10b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product10', 'images/10c.jpg', this)"><img src="images/10c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Ethereal White Muse</h3>
+          <p>3 large roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
+          <div class="product-price">₱1,800</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ethereal White Muse', 1800, document.getElementById('img-product10').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Nova Blake -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Nova Blake', '₱1600', '3 large roses \n100% Natural flowers\nMade of 100% real preserved flowers', ['images/15a.jpg', 'images/15b.jpg', 'images/15c.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/15a.jpg" alt="Nova Blake" id="img-product15" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product15', 'images/15a.jpg', this)"><img src="images/15a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product15', 'images/15b.jpg', this)"><img src="images/15b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product15', 'images/15c.jpg', this)"><img src="images/15c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Nova Blake</h3>
+          <p>3 large roses <br>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price">₱1,600</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Nova Blake', 1600, document.getElementById('img-product15').src)">Add to Basket</button>
         </div>
       </div>
 
@@ -1413,95 +1486,40 @@
         </div>
       </div>
 
-      <!-- Mini Frost Celestial Bouquet -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Frost Celestial Bouquet', '₱499|₱350', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/MCFBa.jpg', 'images/MCFBb.jpg', 'images/MCFBc.jpg'])">
+      <!-- Prosperity Bouquet -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Prosperity Bouquet', '₱1299', '25 pieces bills with dried pink hydra and bunny tail', ['images/PROSPERITYa.jpg', 'images/PROSPERITYb.jpg', 'images/PROSPERITYc.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/MCFBa.jpg" alt="Mini Frost Celestial Bouquet" id="img-minifrost" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/PROSPERITYa.jpg" alt="Prosperity Bouquet" id="img-prosperity" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-minifrost', 'images/MCFBa.jpg', this)"><img src="images/MCFBa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-minifrost', 'images/MCFBb.jpg', this)"><img src="images/MCFBb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-minifrost', 'images/MCFBc.jpg', this)"><img src="images/MCFBc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn active" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYa.jpg', this)"><img src="images/PROSPERITYa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYb.jpg', this)"><img src="images/PROSPERITYb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-prosperity', 'images/PROSPERITYc.jpg', this)"><img src="images/PROSPERITYc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Mini Frost Celestial Bouquet</h3>
+          <h3>Prosperity Bouquet</h3>
+          <p>25 pieces bills with dried pink hydra and bunny tail</p>
+          <div class="product-price">₱1,299</div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Prosperity Bouquet', 1299, document.getElementById('img-prosperity').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Frost Celestial Bouquet -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Frost Celestial Bouquet', '₱1,800|₱1,199', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/13a.jpg', 'images/13b.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/13a.jpg" alt="Frost Celestial Bouquet" id="img-product13" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product13', 'images/13a.jpg', this)"><img src="images/13a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product13', 'images/13b.jpg', this)"><img src="images/13b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Frost Celestial Bouquet</h3>
           <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
-          <div class="product-price"><span class="original-price">₱499</span><span class="discounted-price">₱350</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Frost Celestial Bouquet', 350, document.getElementById('img-minifrost').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Midnight Velvet Elegance', '₱2,600|₱1,999', '9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso', ['images/MVEa.jpg', 'images/MVEb.jpg', 'images/MVEc.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ Featured Bloom</span>
-          <img src="images/MVEa.jpg" alt="Midnight Velvet Elegance" id="img-mve" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-mve', 'images/MVEa.jpg', this)"><img src="images/MVEa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-mve', 'images/MVEb.jpg', this)"><img src="images/MVEb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-mve', 'images/MVEc.jpg', this)"><img src="images/MVEc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Midnight Velvet Elegance</h3>
-          <p>9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso</p>
-          <div class="product-price"><span class="original-price">₱2,600</span><span class="discounted-price">₱1,999</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Midnight Velvet Elegance', 1999, document.getElementById('img-mve').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Blush Amour -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Blush Amour', '₱599|₱450', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/1a.jpg', 'images/1b.jpg', 'images/1c.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/1a.jpg" alt="Blush Amour" id="img-product1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product1', 'images/1a.jpg', this)"><img src="images/1a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product1', 'images/1b.jpg', this)"><img src="images/1b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product1', 'images/1c.jpg', this)"><img src="images/1c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Blush Amour</h3>
-          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
-          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Blush Amour', 450, document.getElementById('img-product1').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Crimson Grace -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Crimson Grace', '₱599|₱450', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/2a.jpg', 'images/2b.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/2a.jpg" alt="Crimson Grace" id="img-product2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product2', 'images/2a.jpg', this)"><img src="images/2a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product2', 'images/2b.jpg', this)"><img src="images/2b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Crimson Grace</h3>
-          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
-          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Crimson Grace', 450, document.getElementById('img-product2').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Golden Amber Preserved Bloom -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Golden Amber Preserved Bloom', '₱3,399|₱2,599', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/3a.jpg', 'images/3b.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/3a.jpg" alt="Golden Amber Preserved Bloom" id="img-product3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product3', 'images/3a.jpg', this)"><img src="images/3a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product3', 'images/3b.jpg', this)"><img src="images/3b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Golden Amber Preserved Bloom</h3>
-          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price"><span class="original-price">₱3,399</span><span class="discounted-price">₱2,599</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Golden Amber Preserved Bloom', 2599, document.getElementById('img-product3').src)">Add to Basket</button>
+          <div class="product-price"><span class="original-price">₱1,800</span><span class="discounted-price">₱1,199</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Frost Celestial Bouquet', 1199, document.getElementById('img-product13').src)">Add to Basket</button>
         </div>
       </div>
 
@@ -1543,44 +1561,6 @@
         </div>
       </div>
 
-      <!-- Velvet Twilight Cluster -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Velvet Twilight Cluster', '₱1,400|₱900', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/6a.jpg', 'images/6b.jpg', 'images/6c.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/6a.jpg" alt="Velvet Twilight Cluster" id="img-product6" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product6', 'images/6a.jpg', this)"><img src="images/6a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product6', 'images/6b.jpg', this)"><img src="images/6b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product6', 'images/6c.jpg', this)"><img src="images/6c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Velvet Twilight Cluster</h3>
-          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price"><span class="original-price">₱1,400</span><span class="discounted-price">₱900</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Velvet Twilight Cluster', 900, document.getElementById('img-product6').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Peach Blossom Elegance -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Peach Blossom Elegance', '₱2,300|₱1,800', '3 large pink roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/7a.jpg', 'images/7b.jpg', 'images/7c.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/7a.jpg" alt="Peach Blossom Elegance" id="img-product7" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product7', 'images/7a.jpg', this)"><img src="images/7a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product7', 'images/7b.jpg', this)"><img src="images/7b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product7', 'images/7c.jpg', this)"><img src="images/7c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Peach Blossom Elegance</h3>
-          <p>3 large pink roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
-          <div class="product-price"><span class="original-price">₱2,300</span><span class="discounted-price">₱1,800</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Peach Blossom Elegance', 1800, document.getElementById('img-product7').src)">Add to Basket</button>
-        </div>
-      </div>
-
       <!-- Raya -->
       <div class="product-card" data-category="preserved" onclick="openProductModal('Raya', '₱1500|₱999', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/8a.jpg', 'images/8b.jpg', 'images/8c.jpg'])">
         <div class="img-container">
@@ -1600,138 +1580,46 @@
         </div>
       </div>
 
-      <!-- Pastel Symphony -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Pastel Symphony', '₱1800', '3 large pink roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/9a.jpg', 'images/9b.jpg', 'images/9c.jpg'])">
+      <!-- Velvet Twilight Cluster -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Velvet Twilight Cluster', '₱1,400|₱900', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/6a.jpg', 'images/6b.jpg', 'images/6c.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/9a.jpg" alt="Pastel Symphony" id="img-product9" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/6a.jpg" alt="Velvet Twilight Cluster" id="img-product6" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product9', 'images/9a.jpg', this)"><img src="images/9a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product9', 'images/9b.jpg', this)"><img src="images/9b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product9', 'images/9c.jpg', this)"><img src="images/9c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn active" onclick="switchProductImage('img-product6', 'images/6a.jpg', this)"><img src="images/6a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product6', 'images/6b.jpg', this)"><img src="images/6b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product6', 'images/6c.jpg', this)"><img src="images/6c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Pastel Symphony</h3>
-          <p>3 large pink roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
-          <div class="product-price">₱1,800</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Pastel Symphony', 1800, document.getElementById('img-product9').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Ethereal White Muse -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Ethereal White Muse', '₱1800', '3 large roses\n100% Natural flowers\nMade of 100% real preserved flowers ', ['images/10a.jpg', 'images/10b.jpg', 'images/10c.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/10a.jpg" alt="Ethereal White Muse" id="img-product10" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product10', 'images/10a.jpg', this)"><img src="images/10a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product10', 'images/10b.jpg', this)"><img src="images/10b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn " onclick="switchProductImage('img-product10', 'images/10c.jpg', this)"><img src="images/10c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Ethereal White Muse</h3>
-          <p>3 large roses<br>100% Natural flowers<br>Made of 100% real preserved flowers </p>
-          <div class="product-price">₱1,800</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Ethereal White Muse', 1800, document.getElementById('img-product10').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Mini Starlight Rose -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Starlight Rose', '₱550|₱399', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/11a.jpg', 'images/11b.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/11a.jpg" alt="Mini Starlight Rose" id="img-product11" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product11', 'images/11a.jpg', this)"><img src="images/11a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product11', 'images/11b.jpg', this)"><img src="images/11b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Mini Starlight Rose</h3>
+          <h3>Velvet Twilight Cluster</h3>
           <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price"><span class="original-price">₱550</span><span class="discounted-price">₱399</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Starlight Rose', 399, document.getElementById('img-product11').src)">Add to Basket</button>
+          <div class="product-price"><span class="original-price">₱1,400</span><span class="discounted-price">₱900</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Velvet Twilight Cluster', 900, document.getElementById('img-product6').src)">Add to Basket</button>
         </div>
       </div>
 
-      <!-- Elizabeth -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Elizabeth', '₱499|₱350', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/12a.jpg', 'images/12b.jpg'])">
+      <!-- Sweet Passion -->
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Sweet Passion', '₱899|₱650', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/PASSIONa.jpg', 'images/PASSIONb.jpg', 'images/PASSIONc.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/12a.jpg" alt="Elizabeth" id="img-product12" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/PASSIONa.jpg" alt="Sweet Passion" id="img-sweetpassion" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product12', 'images/12a.jpg', this)"><img src="images/12a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product12', 'images/12b.jpg', this)"><img src="images/12b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn active" onclick="switchProductImage('img-sweetpassion', 'images/PASSIONa.jpg', this)"><img src="images/PASSIONa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-sweetpassion', 'images/PASSIONb.jpg', this)"><img src="images/PASSIONb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-sweetpassion', 'images/PASSIONc.jpg', this)"><img src="images/PASSIONc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Elizabeth</h3>
+          <h3>Sweet Passion</h3>
           <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price"><span class="original-price">₱499</span><span class="discounted-price">₱350</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Elizabeth', 350, document.getElementById('img-product12').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Frost Celestial Bouquet -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Frost Celestial Bouquet', '₱1,800|₱1,199', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/13a.jpg', 'images/13b.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/13a.jpg" alt="Frost Celestial Bouquet" id="img-product13" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product13', 'images/13a.jpg', this)"><img src="images/13a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product13', 'images/13b.jpg', this)"><img src="images/13b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Frost Celestial Bouquet</h3>
-          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
-          <div class="product-price"><span class="original-price">₱1,800</span><span class="discounted-price">₱1,199</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Frost Celestial Bouquet', 1199, document.getElementById('img-product13').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Astoria -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Astoria', '₱1999', '1 large rose with 4 medium roses\n100% Natural flowers\nMade of 100% real preserved flowers', ['images/14a.jpg', 'images/14b.jpg', 'images/14c.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/14a.jpg" alt="Astoria" id="img-product14" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product14', 'images/14a.jpg', this)"><img src="images/14a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product14', 'images/14b.jpg', this)"><img src="images/14b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product14', 'images/14c.jpg', this)"><img src="images/14c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Astoria</h3>
-          <p>1 large rose with 4 medium roses<br>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price">₱1,999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Astoria', 1999, document.getElementById('img-product14').src)">Add to Basket</button>
-        </div>
-      </div>
-
-      <!-- Nova Blake -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Nova Blake', '₱1600', '3 large roses \n100% Natural flowers\nMade of 100% real preserved flowers', ['images/15a.jpg', 'images/15b.jpg', 'images/15c.jpg'])">
-        <div class="img-container">
-          <span class="badge">✨ New Arrival</span>
-          <img src="images/15a.jpg" alt="Nova Blake" id="img-product15" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
-        </div>
-        <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product15', 'images/15a.jpg', this)"><img src="images/15a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product15', 'images/15b.jpg', this)"><img src="images/15b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product15', 'images/15c.jpg', this)"><img src="images/15c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-        </div>
-        <div class="product-details">
-          <h3>Nova Blake</h3>
-          <p>3 large roses <br>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price">₱1,600</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Nova Blake', 1600, document.getElementById('img-product15').src)">Add to Basket</button>
+          <div class="product-price"><span class="original-price">₱899</span><span class="discounted-price">₱650</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Sweet Passion', 650, document.getElementById('img-sweetpassion').src)">Add to Basket</button>
         </div>
       </div>
 
       <!-- Alessia -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Alessia', '₱499', 'wooden daisy and dried flowers', ['images/16a.jpg', 'images/16b.jpg'])">
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Alessia', '₱499', 'wooden daisy and dried flowers', ['images/16a.jpg', 'images/16b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/16a.jpg" alt="Alessia" id="img-product16" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1749,7 +1637,7 @@
       </div>
 
       <!-- Maeve -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Maeve', '₱499', 'wooden flower and dried flowers', ['images/17a.jpg', 'images/17b.jpg'])">
+      <div class="product-card" data-category="preserved bestseller" onclick="openProductModal('Maeve', '₱499', 'wooden flower and dried flowers', ['images/17a.jpg', 'images/17b.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
           <img src="images/17a.jpg" alt="Maeve" id="img-product17" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
@@ -1784,25 +1672,136 @@
         </div>
       </div>
 
-      <!-- Maeve Flora -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Maeve Flora', '₱1999', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/19a.jpg', 'images/19b.jpg', 'images/19c.jpg'])">
+      <!-- Wrist Corsage & Boutonniere Set -->
+      <div class="product-card" data-category="wedding" onclick="openProductModal('Wrist Corsage & Boutonniere Set', '₱599|₱450', 'Faux flowers/ Artificial flowers', ['images/CORSAGEa.jpg', 'images/CORSAGEb.jpg', 'images/CORSAGEc.jpg', 'images/CORSAGEd.jpg'])">
         <div class="img-container">
           <span class="badge">✨ New Arrival</span>
-          <img src="images/19a.jpg" alt="Maeve Flora" id="img-product19" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+          <img src="images/CORSAGEa.jpg" alt="Wrist Corsage & Boutonniere Set" id="img-corsageset" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
-          <button class="thumb-btn active" onclick="switchProductImage('img-product19', 'images/19a.jpg', this)"><img src="images/19a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product19', 'images/19b.jpg', this)"><img src="images/19b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
-          <button class="thumb-btn" onclick="switchProductImage('img-product19', 'images/19c.jpg', this)"><img src="images/19c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn active" onclick="switchProductImage('img-corsageset', 'images/CORSAGEa.jpg', this)"><img src="images/CORSAGEa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEb.jpg', this)"><img src="images/CORSAGEb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEc.jpg', this)"><img src="images/CORSAGEc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-corsageset', 'images/CORSAGEd.jpg', this)"><img src="images/CORSAGEd.jpg" alt="Angle 4" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
         </div>
         <div class="product-details">
-          <h3>Maeve Flora</h3>
-          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
-          <div class="product-price">₱1,999</div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Maeve Flora', 1999, document.getElementById('img-product19').src)">Add to Basket</button>
+          <h3>Wrist Corsage & Boutonniere Set</h3>
+          <p>Faux flowers/ Artificial flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Wrist Corsage & Boutonniere Set', 450, document.getElementById('img-corsageset').src)">Add to Basket</button>
         </div>
       </div>
 
+      <!-- Blush Amour -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Blush Amour', '₱599|₱450', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/1a.jpg', 'images/1b.jpg', 'images/1c.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/1a.jpg" alt="Blush Amour" id="img-product1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product1', 'images/1a.jpg', this)"><img src="images/1a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product1', 'images/1b.jpg', this)"><img src="images/1b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product1', 'images/1c.jpg', this)"><img src="images/1c.jpg" alt="View 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Blush Amour</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Blush Amour', 450, document.getElementById('img-product1').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Crimson Grace -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Crimson Grace', '₱599|₱450', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/2a.jpg', 'images/2b.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/2a.jpg" alt="Crimson Grace" id="img-product2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product2', 'images/2a.jpg', this)"><img src="images/2a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn " onclick="switchProductImage('img-product2', 'images/2b.jpg', this)"><img src="images/2b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Crimson Grace</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱450</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Crimson Grace', 450, document.getElementById('img-product2').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Preserved Hydra -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Hydra', '₱599|₱399', 'Made of 100% real preserved and dried flowers', ['images/HYDRAa.jpg', 'images/HYDRAb.jpg', 'images/HYDRAc.jpg'])">
+        <div class="img-container">
+          <span class="badge">Preserved</span>
+          <img src="images/HYDRAa.jpg" alt="Preserved Hydra" id="img-hydra" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-hydra', 'images/HYDRAa.jpg', this)"><img src="images/HYDRAa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-hydra', 'images/HYDRAb.jpg', this)"><img src="images/HYDRAb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-hydra', 'images/HYDRAc.jpg', this)"><img src="images/HYDRAc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Preserved Hydra</h3>
+          <p>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱599</span><span class="discounted-price">₱399</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Hydra', 399, document.getElementById('img-hydra').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Mini Starlight Rose -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Starlight Rose', '₱550|₱399', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/11a.jpg', 'images/11b.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/11a.jpg" alt="Mini Starlight Rose" id="img-product11" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product11', 'images/11a.jpg', this)"><img src="images/11a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product11', 'images/11b.jpg', this)"><img src="images/11b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Mini Starlight Rose</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱550</span><span class="discounted-price">₱399</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Starlight Rose', 399, document.getElementById('img-product11').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Mini Frost Celestial Bouquet -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Mini Frost Celestial Bouquet', '₱499|₱350', '100% Natural flowers\nMade of 100% real preserved and dried flowers', ['images/MCFBa.jpg', 'images/MCFBb.jpg', 'images/MCFBc.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/MCFBa.jpg" alt="Mini Frost Celestial Bouquet" id="img-minifrost" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-minifrost', 'images/MCFBa.jpg', this)"><img src="images/MCFBa.jpg" alt="Angle 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-minifrost', 'images/MCFBb.jpg', this)"><img src="images/MCFBb.jpg" alt="Angle 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-minifrost', 'images/MCFBc.jpg', this)"><img src="images/MCFBc.jpg" alt="Angle 3" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Mini Frost Celestial Bouquet</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved and dried flowers</p>
+          <div class="product-price"><span class="original-price">₱499</span><span class="discounted-price">₱350</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Mini Frost Celestial Bouquet', 350, document.getElementById('img-minifrost').src)">Add to Basket</button>
+        </div>
+      </div>
+
+      <!-- Elizabeth -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Elizabeth', '₱499|₱350', '100% Natural flowers\nMade of 100% real preserved flowers', ['images/12a.jpg', 'images/12b.jpg'])">
+        <div class="img-container">
+          <span class="badge">✨ New Arrival</span>
+          <img src="images/12a.jpg" alt="Elizabeth" id="img-product12" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=600&q=80'">
+        </div>
+        <div class="thumbnail-selector" onclick="event.stopPropagation();">
+          <button class="thumb-btn active" onclick="switchProductImage('img-product12', 'images/12a.jpg', this)"><img src="images/12a.jpg" alt="View 1" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+          <button class="thumb-btn" onclick="switchProductImage('img-product12', 'images/12b.jpg', this)"><img src="images/12b.jpg" alt="View 2" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=200&q=80'"></button>
+        </div>
+        <div class="product-details">
+          <h3>Elizabeth</h3>
+          <p>100% Natural flowers<br>Made of 100% real preserved flowers</p>
+          <div class="product-price"><span class="original-price">₱499</span><span class="discounted-price">₱350</span></div>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Elizabeth', 350, document.getElementById('img-product12').src)">Add to Basket</button>
+        </div>
+      </div>
     </div>
   </section>
 
