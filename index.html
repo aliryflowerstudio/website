@@ -1806,6 +1806,124 @@
       letter-spacing: 2px;
     }
 
+    /* CUSTOM ORDER SECTION */
+    .custom-order-section {
+      padding: 70px 8%;
+      background: var(--bg-cream);
+      border-bottom: 1px solid var(--border-light);
+      scroll-margin-top: 110px;
+    }
+
+    .custom-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .custom-step {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 26px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .custom-step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f5cfd5;
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+
+    .custom-step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .custom-step p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .custom-options {
+      background: #f7eee9;
+      border-radius: 10px;
+      padding: 28px 30px;
+      max-width: 900px;
+      margin: 0 auto 30px;
+    }
+
+    .custom-options h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 14px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .custom-options ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 30px;
+    }
+
+    .custom-options li {
+      font-size: 13px;
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .custom-options li::before {
+      content: '\2740';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    .custom-cta {
+      text-align: center;
+    }
+
+    .custom-cta .btn-primary {
+      padding: 14px 30px;
+      font-size: 12px;
+    }
+
+    .custom-cta p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    @media (max-width: 992px) {
+      .custom-steps { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .custom-order-section { padding: 50px 5%; }
+      .custom-steps { grid-template-columns: 1fr; gap: 12px; }
+      .custom-options { padding: 22px 18px; }
+      .custom-options ul { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 1200px) {
       .products-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1885,7 +2003,8 @@
 
       <nav>
         <ul>
-          <li><a href="#flowers">Occasions</a></li>
+          <li><a href="#flowers">Collections</a></li>
+          <li><a href="#custom-order">Custom Order</a></li>
           <li><a href="#about" onclick="expandStory(event)">Our Story</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#contact" onclick="highlightContact()">Contact</a></li>
@@ -1913,7 +2032,8 @@
       <button class="close-btn" id="closeMobileNav">&times;</button>
     </div>
     <ul>
-      <li><a href="#flowers" onclick="toggleMobileNav()">Occasions</a></li>
+      <li><a href="#flowers" onclick="toggleMobileNav()">Collections</a></li>
+      <li><a href="#custom-order" onclick="toggleMobileNav()">Custom Order</a></li>
       <li><a href="#about" onclick="toggleMobileNav(); expandStory();">Our Story</a></li>
       <li><a href="#reviews" onclick="toggleMobileNav()">Reviews</a></li>
       <li><a href="#contact" onclick="toggleMobileNav(); highlightContact();">Contact</a></li>
@@ -2418,6 +2538,53 @@
     </div>
   </div>
 
+  <section class="custom-order-section" id="custom-order">
+    <div class="section-header">
+      <h2>Custom Order</h2>
+      <p>Have something special in mind? Tell us your idea and we will create it for you.</p>
+    </div>
+
+    <div class="custom-steps">
+      <div class="custom-step">
+        <div class="custom-step-num">1</div>
+        <h3>Share Your Idea</h3>
+        <p>Message us the occasion, your preferred flowers and colors, and your budget. You are welcome to send a reference photo of the bouquet you have in mind.</p>
+      </div>
+      <div class="custom-step">
+        <div class="custom-step-num">2</div>
+        <h3>We Design It</h3>
+        <p>We suggest a bouquet that fits your idea and budget, and confirm the price with you.</p>
+      </div>
+      <div class="custom-step">
+        <div class="custom-step-num">3</div>
+        <h3>Confirm the Details</h3>
+        <p>Approve the design, your card message and the delivery details, and we will guide you through payment.</p>
+      </div>
+      <div class="custom-step">
+        <div class="custom-step-num">4</div>
+        <h3>We Make and Deliver</h3>
+        <p>Your bouquet is handcrafted by our florist and delivered to you or your recipient. We will confirm the timing for your design.</p>
+      </div>
+    </div>
+
+    <div class="custom-options">
+      <h3>What You Can Customize</h3>
+      <ul>
+        <li>Preserved or dried flowers in your preferred colors</li>
+        <li>Fresh flowers: we can create fresh flower bouquets too</li>
+        <li>Extras: ferrero chocolates or a money bouquet</li>
+        <li>Size and budget: from small bouquets to large arrangements</li>
+        <li>Reference photo: feel free to send us any bouquet you like as inspiration</li>
+        <li>A free personalized card with your own message</li>
+      </ul>
+    </div>
+
+    <div class="custom-cta">
+      <a href="https://m.me/aliryflowerstudio?text=Hi!%20I'd%20like%20to%20order%20a%20custom%20bouquet." target="_blank" rel="noopener" class="btn-primary">Start Your Custom Order</a>
+      <p>Opens Messenger with your message ready to send.</p>
+    </div>
+  </section>
+
   <section class="story-section" id="about">
     <div class="story-img-container">
       <img src="images/3a.jpg" onerror="imgFallback(this)" alt="Our Story Bouquet" width="800" height="600" loading="lazy" decoding="async">
@@ -2485,9 +2652,9 @@
       </div>
 
       <div class="footer-col">
-        <h4>SHOP OCCASIONS</h4>
+        <h4>SHOP COLLECTIONS</h4>
         <ul>
-          <li><a href="https://m.me/aliryflowerstudio?text=Hi!%20I'd%20like%20to%20order%20a%20custom%20bouquet." target="_blank" rel="noopener">Custom Order</a></li>
+          <li><a href="#custom-order">Custom Order</a></li>
           <li><a href="#flowers" onclick="filterCategory('preserved-dried');">Preserve Bouquet</a></li>
           <li><a href="#flowers" onclick="filterCategory('bestseller');">Best Seller</a></li>
         </ul>
