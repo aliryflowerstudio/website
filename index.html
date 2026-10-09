@@ -697,87 +697,96 @@
       transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .logo-container:hover .logo-img {
-      transform: scale(1.04) rotate(-1deg);
+    /* LOGO BLOOM: the stems and flowers of the "A" grow, and the rose blooms, on hover */
+    .logo-art {
+      position: relative;
+      display: block;
+      height: clamp(45px, 5vw, 60px);
+      aspect-ratio: 324 / 440;
+      z-index: 2;
+      transform-origin: 50% 20%;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    /* MAGICAL BLOOM OVERLAY ANIMATION */
-    .bloom-svg-overlay {
+    .logo-layer {
       position: absolute;
-      top: -45px;
-      left: -50px;
-      width: 160px;
-      height: 160px;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .logo-blossoms {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
       pointer-events: none;
-      z-index: 1;
-      opacity: 0;
-      transform: scale(0.6) rotate(-15deg);
-      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .logo-container:hover .bloom-svg-overlay {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
-    }
-
-    .magical-stem {
-      stroke: #914f61;
-      stroke-width: 2;
-      stroke-linecap: round;
-      fill: none;
-      stroke-dasharray: 120;
-      stroke-dashoffset: 120;
-      transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
-    }
-
-    .logo-container:hover .magical-stem {
-      stroke-dashoffset: 0;
-    }
-
-    .magical-branch {
-      stroke: #d8a0a6;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      fill: none;
-      stroke-dasharray: 60;
-      stroke-dashoffset: 60;
-      transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-    }
-
-    .logo-container:hover .magical-branch {
-      stroke-dashoffset: 0;
-    }
-
-    .magical-petal {
-      fill: #f5cfd5;
-      stroke: #914f61;
-      stroke-width: 0.8;
-      transform: scale(0);
+    .logo-blossom {
+      transform-box: fill-box;
       transform-origin: center;
-      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
-    }
-
-    .logo-container:hover .magical-petal {
-      transform: scale(1);
-    }
-
-    .magical-sparkle {
-      fill: #e6b800;
-      opacity: 0;
       transform: scale(0);
-      transform-origin: center;
-      transition: all 0.5s ease 0.7s;
+      opacity: 0;
     }
 
-    .logo-container:hover .magical-sparkle {
-      opacity: 1;
-      transform: scale(1.2);
-      animation: sparkleFloat 2s infinite ease-in-out alternate;
+    .logo-text {
+      transition: transform 0.5s ease;
     }
 
-    @keyframes sparkleFloat {
-      0% { transform: scale(1.1) translateY(0); }
-      100% { transform: scale(1.3) translateY(-3px); }
+    .logo-container:hover .logo-art { transform: scale(1.4); }
+    .logo-container:hover .logo-text { transform: translateX(12px); }
+
+    .logo-container:hover .logo-stems {
+      transform-origin: 15% 62%;
+      animation:
+        logoStemGrow 1.2s cubic-bezier(0.3, 0.6, 0.3, 1) both,
+        logoStemSway 2.6s ease-in-out 1.2s infinite alternate;
+    }
+
+    .logo-container:hover .logo-rose {
+      transform-origin: 37.7% 76.3%;
+      animation: logoRoseBloom 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+    }
+
+    .logo-container:hover .logo-blossom {
+      animation: logoBlossomPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    .logo-container:hover .logo-blossom.b3 { animation-delay: 0.65s; }
+    .logo-container:hover .logo-blossom.b1 { animation-delay: 0.8s; }
+    .logo-container:hover .logo-blossom.b2 { animation-delay: 1s; }
+
+    @keyframes logoStemGrow {
+      from { clip-path: inset(60% 0 0 0); }
+      to { clip-path: inset(0 0 0 0); }
+    }
+
+    @keyframes logoStemSway {
+      from { transform: rotate(-1.2deg); }
+      to { transform: rotate(1.6deg); }
+    }
+
+    @keyframes logoRoseBloom {
+      0% { transform: scale(0.1) rotate(-90deg); opacity: 0; }
+      40% { opacity: 1; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    @keyframes logoBlossomPop {
+      0% { transform: scale(0) rotate(-120deg); opacity: 0; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-container:hover .logo-stems,
+      .logo-container:hover .logo-rose,
+      .logo-container:hover .logo-blossom { animation: none; }
+      .logo-container:hover .logo-blossom { opacity: 0; }
+      .logo-container:hover .logo-art,
+      .logo-container:hover .logo-text { transform: none; }
     }
 
     .logo-text {
@@ -1953,7 +1962,7 @@
       .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .trust-bar, .footer-grid { grid-template-columns: 1fr; }
       .cart-drawer { width: 100%; right: -100%; }
-      .logo-img { height: 40px; }
+      .logo-art { height: 40px; }
       .thumb-btn { width: 38px; height: 38px; }
       .product-quick-view-content { padding: 20px; }
       .notify-form { flex-direction: column; }
@@ -1973,27 +1982,16 @@
 
       <a href="#flowers" class="logo-container">
         <div class="logo-bloom-wrapper">
-          <svg class="bloom-svg-overlay" viewBox="0 0 120 120">
-            <path class="magical-stem" d="M30 90 Q 40 70, 50 50 T 60 25" />
-            <path class="magical-branch" d="M50 50 Q 35 45, 25 35" />
-            <path class="magical-branch" d="M45 62 Q 60 55, 72 45" />
-            <ellipse class="magical-petal" cx="25" cy="35" rx="5" ry="3" transform="rotate(-30 25 35)" />
-            <ellipse class="magical-petal" cx="72" cy="45" rx="5" ry="3" transform="rotate(30 72 45)" />
-            <g transform="translate(60, 22)">
-              <ellipse class="magical-petal" cx="0" cy="-12" rx="5" ry="9" />
-              <ellipse class="magical-petal" cx="10" cy="-6" rx="5" ry="9" transform="rotate(60 10 -6)" />
-              <ellipse class="magical-petal" cx="10" cy="6" rx="5" ry="9" transform="rotate(120 10 6)" />
-              <ellipse class="magical-petal" cx="0" cy="12" rx="5" ry="9" transform="rotate(180 0 12)" />
-              <ellipse class="magical-petal" cx="-10" cy="6" rx="5" ry="9" transform="rotate(240 -10 6)" />
-              <ellipse class="magical-petal" cx="-10" cy="-6" rx="5" ry="9" transform="rotate(300 -10 -6)" />
-              <circle cx="0" cy="0" r="4" fill="#914f61" />
-            </g>
-            <circle class="magical-sparkle" cx="50" cy="15" r="2" />
-            <circle class="magical-sparkle" cx="78" cy="30" r="1.5" />
-            <circle class="magical-sparkle" cx="20" cy="20" r="1.5" />
-          </svg>
-
-          <img src="logo2.jpg" alt="ALIRY. Flower Studio" class="logo-img" onerror="imgFallback(this)">
+          <div class="logo-art">
+            <img src="images/logo-base.png" alt="ALIRY. Flower Studio" class="logo-layer logo-base" width="324" height="440" onerror="this.onerror=null;this.src='logo2.jpg'">
+            <img src="images/logo-stems.png" alt="" aria-hidden="true" class="logo-layer logo-stems" width="324" height="440" onerror="this.style.display='none'">
+            <svg class="logo-blossoms" viewBox="0 0 324 440" aria-hidden="true">
+              <g class="logo-blossom b1"><g transform="translate(86 22) scale(1.9)"><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(0)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(72)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(144)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(216)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(288)" fill="#ff5db8"/><circle r="3.2" fill="#fff0f7" stroke="#e5208f" stroke-width="0.6"/></g></g>
+              <g class="logo-blossom b2"><g transform="translate(29 84) scale(1.5)"><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(0)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(72)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(144)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(216)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(288)" fill="#ff5db8"/><circle r="3.2" fill="#fff0f7" stroke="#e5208f" stroke-width="0.6"/></g></g>
+              <g class="logo-blossom b3"><g transform="translate(31 218) scale(1.5)"><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(0)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(72)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(144)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(216)" fill="#ff5db8"/><ellipse cx="0" cy="-7.5" rx="4.4" ry="7" transform="rotate(288)" fill="#ff5db8"/><circle r="3.2" fill="#fff0f7" stroke="#e5208f" stroke-width="0.6"/></g></g>
+            </svg>
+            <img src="images/logo-rose.png" alt="" aria-hidden="true" class="logo-layer logo-rose" width="324" height="440" onerror="this.style.display='none'">
+          </div>
         </div>
         <div class="logo-text">
           <span class="logo">ALIRY.</span>
