@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preserved Flower Bouquets in Dasmariñas, Cavite | ALIRY Flower Studio</title>
-  <meta name="description" content="Handcrafted preserved and dried flower bouquets from ALIRY Flower Studio in Dasmariñas, Cavite. Same-day delivery and a free personalized card with every order.">
+  <meta name="description" content="Handcrafted preserved and dried flower bouquets in Dasmariñas, Cavite, plus fresh flowers on custom order. Same-day delivery and a free personalized card.">
   <link rel="canonical" href="https://aliryflowerstudio.com/">
   <meta name="theme-color" content="#914f61">
 
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ALIRY. Flower Studio">
   <meta property="og:title" content="Preserved Flower Bouquets in Dasmariñas, Cavite | ALIRY Flower Studio">
-  <meta property="og:description" content="Handcrafted preserved and dried flower bouquets from ALIRY Flower Studio in Dasmariñas, Cavite. Same-day delivery and a free personalized card with every order.">
+  <meta property="og:description" content="Handcrafted preserved and dried flower bouquets in Dasmariñas, Cavite, plus fresh flowers on custom order. Same-day delivery and a free personalized card.">
   <meta property="og:url" content="https://aliryflowerstudio.com/">
   <meta property="og:image" content="https://aliryflowerstudio.com/images/3a.jpg">
   <meta property="og:image:alt" content="ALIRY. Flower Studio preserved flower bouquet">
@@ -37,7 +37,7 @@
       "url": "https://aliryflowerstudio.com/",
       "logo": "https://aliryflowerstudio.com/images/logo1.jpg",
       "image": "https://aliryflowerstudio.com/images/3a.jpg",
-      "description": "Handcrafted preserved and dried flower bouquets and personalized floral gifts in Dasmariñas, Cavite.",
+      "description": "Handcrafted preserved and dried flower bouquets and personalized floral gifts in Dasmariñas, Cavite, with fresh flowers available on custom order.",
       "telephone": "+63-939-228-5049",
       "email": "aliryflowerstudio@gmail.com",
       "priceRange": "₱350 - ₱2,599",
@@ -87,7 +87,7 @@
           "item": {
             "@type": "Product",
             "name": "Midnight Velvet Elegance",
-            "description": "9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso.",
+            "description": "9 pieces Ferrero chocolates, 3 medium preserved roses, 4 small preserved roses, also with hydrangea and baby's breath.",
             "image": "https://aliryflowerstudio.com/images/MVEa.jpg",
             "brand": {
               "@type": "Brand",
@@ -247,7 +247,7 @@
           "item": {
             "@type": "Product",
             "name": "Prosperity Bouquet",
-            "description": "25 pieces bills with dried pink hydra and bunny tail.",
+            "description": "25 pieces of bills with dried pink hydrangea and bunny tail.",
             "image": "https://aliryflowerstudio.com/images/PROSPERITYa.jpg",
             "brand": {
               "@type": "Brand",
@@ -447,7 +447,7 @@
           "item": {
             "@type": "Product",
             "name": "Wrist Corsage & Boutonniere Set",
-            "description": "Faux flowers/ Artificial flowers.",
+            "description": "Faux (artificial) flowers.",
             "image": "https://aliryflowerstudio.com/images/CORSAGEa.jpg",
             "brand": {
               "@type": "Brand",
@@ -506,7 +506,7 @@
           "position": 23,
           "item": {
             "@type": "Product",
-            "name": "Preserved Hydra",
+            "name": "Preserved Hydrangea",
             "description": "Made of 100% real preserved and dried flowers.",
             "image": "https://aliryflowerstudio.com/images/HYDRAa.jpg",
             "brand": {
@@ -1933,6 +1933,221 @@
       .custom-options ul { grid-template-columns: 1fr; }
     }
 
+    /* HERO BANNER */
+    #flowers { scroll-margin-top: 100px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      padding: 50px 8%;
+      background: linear-gradient(135deg, #fdfaf7 0%, #f9ecee 100%);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-eyebrow {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4.2vw, 50px);
+      line-height: 1.15;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 26px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .hero .btn-primary {
+      padding: 14px 28px;
+      font-size: 11px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 13px 27px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+      text-decoration: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Row of four highlights under the hero buttons */
+    .hero-points {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .hero-points li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 4px;
+      padding: 12px 8px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+    }
+
+    .hp-icon {
+      font-size: 20px;
+      line-height: 1;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hp-icon.peso {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .hp-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+
+    .hp-sub {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .hero-photo {
+      width: 100%;
+      max-width: 440px;
+      justify-self: end;
+      aspect-ratio: 4 / 5;
+      max-height: 540px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(145, 79, 97, 0.18);
+    }
+
+    .hero-photo {
+      position: relative;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .hero-slide.active { opacity: 1; }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 3;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border-radius: 50%;
+      border: 1px solid var(--primary);
+      background: rgba(255, 255, 255, 0.6);
+      transition: var(--transition-smooth);
+    }
+
+    .hero-dot.active {
+      width: 20px;
+      border-radius: 4px;
+      background: var(--primary);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slide { transition: none; }
+    }
+
+    .footer-contact-link {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-contact-link:hover { color: #fff; }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 34px 5%;
+        text-align: center;
+      }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-points { max-width: 520px; margin: 0 auto; }
+      .hero-photo {
+        justify-self: center;
+        aspect-ratio: 16 / 10;
+        max-width: 100%;
+      }
+      .hero-photo img { object-position: center 35%; }
+    }
+
+    @media (max-width: 520px) {
+      .hero-points { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 1200px) {
       .products-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -2038,6 +2253,43 @@
     </ul>
   </div>
 
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Flowers that stay</p>
+      <h1>Preserved flower bouquets, <em>handmade in Dasmariñas.</em></h1>
+      <p class="hero-sub">Long-lasting floral gifts, made personal. Same-day delivery in Dasmariñas, Cavite and nearby areas, with a free personalized card in every order.</p>
+      <div class="hero-buttons">
+        <a href="#flowers" class="btn-primary">Shop Bouquets</a>
+        <a href="#custom-order" class="btn-outline">Custom Order</a>
+      </div>
+      <ul class="hero-points">
+        <li>
+          <span class="hp-icon" aria-hidden="true">🌸</span>
+          <span class="hp-title">Real Preserved Flowers</span>
+        </li>
+        <li>
+          <span class="hp-icon" aria-hidden="true">🚚</span>
+          <span class="hp-title">Same-Day Delivery</span>
+          <span class="hp-sub">For orders confirmed before 8 PM</span>
+        </li>
+        <li>
+          <span class="hp-icon" aria-hidden="true">💌</span>
+          <span class="hp-title">Free Personalized Message Card</span>
+        </li>
+        <li>
+          <span class="hp-icon peso" aria-hidden="true">₱</span>
+          <span class="hp-title">Bouquets Starting at ₱350</span>
+        </li>
+      </ul>
+    </div>
+    <div class="hero-photo" id="heroSlideshow" role="group" aria-roledescription="carousel" aria-label="Featured bouquets">
+      <img class="hero-slide active" src="images/3b.jpg" alt="Handcrafted preserved flower bouquet from ALIRY. Flower Studio" width="800" height="1000" fetchpriority="high" decoding="async" onerror="imgFallback(this)">
+      <img class="hero-slide" src="images/1c.jpg" alt="Preserved and dried flower bouquet from ALIRY. Flower Studio" width="800" height="1000" decoding="async" onerror="imgFallback(this)">
+      <img class="hero-slide" src="images/13a.jpg" alt="Frost Celestial preserved and dried flower bouquet from ALIRY. Flower Studio" width="800" height="1000" decoding="async" onerror="imgFallback(this)">
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
+  </section>
+
   <section class="section-padding" id="flowers" style="padding-top: 30px;">
     <div class="section-header">
       <h2>Featured Arrangements</h2>
@@ -2063,7 +2315,7 @@
         </div>
       </div>
 
-      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Midnight Velvet Elegance', '₱2,600|₱1,999', '9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso', ['images/MVEa.jpg', 'images/MVEb.jpg', 'images/MVEc.jpg'])">
+      <div class="product-card" data-category="bestseller customized" onclick="openProductModal('Midnight Velvet Elegance', '₱2,600|₱1,999', '9 pieces Ferrero chocolates, 3 medium preserved roses, 4 small preserved roses, also with hydrangea and baby\'s breath', ['images/MVEa.jpg', 'images/MVEb.jpg', 'images/MVEc.jpg'])">
         <div class="img-container">
           <span class="badge">Custom Favorite</span>
           <img src="images/MVEa.jpg" alt="Midnight Velvet Elegance" id="img-mve" onerror="imgFallback(this)" width="600" height="600" decoding="async">
@@ -2075,7 +2327,7 @@
         </div>
         <div class="product-details">
           <h3>Midnight Velvet Elegance</h3>
-          <p>9 pieces ferrero, 3 medium preserved roses, 4 small preserved roses, also with hydra and gypso</p>
+          <p>9 pieces Ferrero chocolates, 3 medium preserved roses, 4 small preserved roses, also with hydrangea and baby's breath</p>
           <div class="product-price"><span class="original-price">₱2,600</span><span class="discounted-price">₱1,999</span></div>
           <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Midnight Velvet Elegance', 1999, document.getElementById('img-mve').src)">Add to Basket</button>
         </div>
@@ -2211,7 +2463,7 @@
       </div>
 
       <!-- Prosperity Bouquet -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Prosperity Bouquet', '₱1299', '25 pieces bills with dried pink hydra and bunny tail', ['images/PROSPERITYa.jpg', 'images/PROSPERITYb.jpg', 'images/PROSPERITYc.jpg'])">
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Prosperity Bouquet', '₱1299', '25 pieces of bills with dried pink hydrangea and bunny tail', ['images/PROSPERITYa.jpg', 'images/PROSPERITYb.jpg', 'images/PROSPERITYc.jpg'])">
         <div class="img-container">
           <img src="images/PROSPERITYa.jpg" alt="Prosperity Bouquet" id="img-prosperity" onerror="imgFallback(this)" width="600" height="600" decoding="async" loading="lazy">
         </div>
@@ -2222,7 +2474,7 @@
         </div>
         <div class="product-details">
           <h3>Prosperity Bouquet</h3>
-          <p>25 pieces bills with dried pink hydra and bunny tail</p>
+          <p>25 pieces of bills with dried pink hydrangea and bunny tail</p>
           <div class="product-price">₱1,299</div>
           <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Prosperity Bouquet', 1299, document.getElementById('img-prosperity').src)">Add to Basket</button>
         </div>
@@ -2391,7 +2643,7 @@
       </div>
 
       <!-- Wrist Corsage & Boutonniere Set -->
-      <div class="product-card" data-category="wedding" onclick="openProductModal('Wrist Corsage & Boutonniere Set', '₱599|₱450', 'Faux flowers/ Artificial flowers', ['images/CORSAGEa.jpg', 'images/CORSAGEb.jpg', 'images/CORSAGEc.jpg', 'images/CORSAGEd.jpg'])">
+      <div class="product-card" data-category="wedding" onclick="openProductModal('Wrist Corsage & Boutonniere Set', '₱599|₱450', 'Faux (artificial) flowers', ['images/CORSAGEa.jpg', 'images/CORSAGEb.jpg', 'images/CORSAGEc.jpg', 'images/CORSAGEd.jpg'])">
         <div class="img-container">
           <img src="images/CORSAGEa.jpg" alt="Wrist Corsage & Boutonniere Set" id="img-corsageset" onerror="imgFallback(this)" width="600" height="600" decoding="async" loading="lazy">
         </div>
@@ -2403,7 +2655,7 @@
         </div>
         <div class="product-details">
           <h3>Wrist Corsage & Boutonniere Set</h3>
-          <p>Faux flowers/ Artificial flowers</p>
+          <p>Faux (artificial) flowers</p>
           <div class="product-price"><span class="discounted-price">₱450</span></div>
           <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Wrist Corsage & Boutonniere Set', 450, document.getElementById('img-corsageset').src)">Add to Basket</button>
         </div>
@@ -2444,11 +2696,11 @@
         </div>
       </div>
 
-      <!-- Preserved Hydra -->
-      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Hydra', '₱599|₱399', 'Made of 100% real preserved and dried flowers', ['images/HYDRAa.jpg', 'images/HYDRAb.jpg', 'images/HYDRAc.jpg'])">
+      <!-- Preserved Hydrangea -->
+      <div class="product-card" data-category="preserved" onclick="openProductModal('Preserved Hydrangea', '₱599|₱399', 'Made of 100% real preserved and dried flowers', ['images/HYDRAa.jpg', 'images/HYDRAb.jpg', 'images/HYDRAc.jpg'])">
         <div class="img-container">
           <span class="badge">Preserved</span>
-          <img src="images/HYDRAa.jpg" alt="Preserved Hydra" id="img-hydra" onerror="imgFallback(this)" width="600" height="600" decoding="async" loading="lazy">
+          <img src="images/HYDRAa.jpg" alt="Preserved Hydrangea" id="img-hydra" onerror="imgFallback(this)" width="600" height="600" decoding="async" loading="lazy">
         </div>
         <div class="thumbnail-selector" onclick="event.stopPropagation();">
           <button class="thumb-btn active" onclick="switchProductImage('img-hydra', 'images/HYDRAa.jpg', this)"><img src="images/HYDRAa.jpg" alt="Angle 1" onerror="imgFallback(this)" width="64" height="64" loading="lazy" decoding="async"></button>
@@ -2456,10 +2708,10 @@
           <button class="thumb-btn" onclick="switchProductImage('img-hydra', 'images/HYDRAc.jpg', this)"><img src="images/HYDRAc.jpg" alt="Angle 3" onerror="imgFallback(this)" width="64" height="64" loading="lazy" decoding="async"></button>
         </div>
         <div class="product-details">
-          <h3>Preserved Hydra</h3>
+          <h3>Preserved Hydrangea</h3>
           <p>Made of 100% real preserved and dried flowers</p>
           <div class="product-price"><span class="discounted-price">₱399</span></div>
-          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Hydra', 399, document.getElementById('img-hydra').src)">Add to Basket</button>
+          <button class="btn-primary" onclick="event.stopPropagation(); addToCart('Preserved Hydrangea', 399, document.getElementById('img-hydra').src)">Add to Basket</button>
         </div>
       </div>
 
@@ -2570,7 +2822,7 @@
       <ul>
         <li>Preserved or dried flowers in your preferred colors</li>
         <li>Fresh flowers: we can create fresh flower bouquets too</li>
-        <li>Extras: ferrero chocolates or a money bouquet</li>
+        <li>Extras: Ferrero chocolates or a money bouquet</li>
         <li>Size and budget: from small bouquets to large arrangements</li>
         <li>Reference photo: feel free to send us any bouquet you like as inspiration</li>
         <li>A free personalized card with your own message</li>
@@ -2585,7 +2837,7 @@
 
   <section class="story-section" id="about">
     <div class="story-img-container">
-      <img src="images/3a.jpg" onerror="imgFallback(this)" alt="Our Story Bouquet" width="800" height="600" loading="lazy" decoding="async">
+      <img src="images/1b.jpg" onerror="imgFallback(this)" alt="Our Story Bouquet" width="800" height="600" loading="lazy" decoding="async">
     </div>
     <div class="story-content">
       <h2>Created with a love for flowers and an eye for detail.</h2>
@@ -2643,7 +2895,7 @@
           <a href="https://www.tiktok.com/@aliry.flowerstudio" target="_blank" rel="noopener" class="social-icon-link tiktok" aria-label="TikTok">
             <svg viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.242V2h-3.445v13.672a2.896 2.896 0 0 1-5.01 1.953 2.892 2.892 0 0 1 1.025-4.444v-3.414a6.335 6.335 0 0 0-4.44 6.091 6.338 6.338 0 0 0 6.34 6.339 6.342 6.342 0 0 0 6.34-6.339V8.675a8.19 8.19 0 0 0 4.77 1.52v-3.47a4.795 4.795 0 0 1-2.25-0.039z"/></svg>
           </a>
-          <a href="https://www.instagram.com/aliry.flowerstudio?stkn=MWp4eGdtd3JjcDE4NA==" target="_blank" class="social-icon-link instagram" aria-label="Instagram">
+          <a href="https://www.instagram.com/aliry.flowerstudio" target="_blank" class="social-icon-link instagram" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.28-.073-1.689-.073-4.948 0-3.259.014-3.668.072-4.948.2-4.358 2.618-6.78 6.98-6.98 1.281-.058 1.689-.072 4.948-.072 3.259 0 3.668.014 4.948.072 4.354.2 6.782 2.618 6.979 6.98.059 1.28.073 1.689.073 4.948 0 3.259-.014 3.667-.072 4.947-.196 4.354-2.617 6.78-6.979 6.98-1.281.059-1.69.073-4.949.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
         </div>
@@ -2672,8 +2924,8 @@
         <h4>CONTACT US</h4>
         <p style="font-size:12px; color:#ccc; line-height:1.8;">
           📍 Dasmariñas Cavite, Philippines<br>
-          📞 Phone: 0939-228-5049<br>
-          📧 Email: aliryflowerstudio@gmail.com
+          📞 Phone: <a href="tel:+639392285049" class="footer-contact-link">0939-228-5049</a><br>
+          📧 Email: <a href="mailto:aliryflowerstudio@gmail.com" class="footer-contact-link">aliryflowerstudio@gmail.com</a>
         </p>
       </div>
     </div>
@@ -3025,6 +3277,46 @@
         aboutSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
+
+    // Hero slideshow: crossfades every few seconds, pauses on hover/focus
+    (function () {
+      const box = document.getElementById('heroSlideshow');
+      if (!box) return;
+      const slides = box.querySelectorAll('.hero-slide');
+      const dotsBox = document.getElementById('heroDots');
+      if (slides.length < 2) return;
+      const INTERVAL = 4500;
+      let current = 0;
+      let timer = null;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Show photo ' + (i + 1));
+        dot.addEventListener('click', () => { show(i); restart(); });
+        dotsBox.appendChild(dot);
+      });
+      const dots = dotsBox.querySelectorAll('.hero-dot');
+
+      function show(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      function start() { if (!timer) timer = setInterval(() => show(current + 1), INTERVAL); }
+      function stop() { clearInterval(timer); timer = null; }
+      function restart() { stop(); start(); }
+
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        start();
+        box.addEventListener('mouseenter', stop);
+        box.addEventListener('mouseleave', start);
+        document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+      }
+    })();
 
     window.addEventListener('load', updateStoryToggle);
     window.addEventListener('resize', updateStoryToggle);
